@@ -1,21 +1,17 @@
 ---
 import Card from "../components/Card.astro";
-const { data } = Astro.props;
+interface Props {
+    row?: any;
+}
+const { row } = Astro.props;
 ---
 
 <div class="row slide-in-from-bottom-light">
     {
-        data.map(
-            (data: {
-                imgUrl: string;
-                alt: string;
-                title: string;
-                description: string;
-            }) => (
-                <div class="column to-slide-bottom-light animate">
-                    <Card data={data} />
-                </div>
-            )
-        )
+        row.map((post) => (
+            <div class="column to-slide-bottom-light animate">
+                <Card article={post} />
+            </div>
+        ))
     }
 </div>

@@ -1,17 +1,18 @@
 ---
+interface Props {
+    article?: any;
+}
 const { article } = Astro.props;
 ---
 
-<article id="data-article" data-article={article}></article>
-<div class="column to-slide-bottom-light animate">
-    <div class="card">
-        <div class="img-container">
-            <img src={article.img} alt={article.alt} />
-        </div>
-        <div class="container">
-            <h4><b>{article.title}</b></h4>
-            <p>{article.description}</p>
-        </div>
+<article id="data-article" data-article={article.id}></article>
+<div class="card">
+    <div class="img-container">
+        <img src={article.imgUrl} alt={article.alt} />
+    </div>
+    <div class="container">
+        <h4><b>{article.title}</b></h4>
+        <p>{article.description}</p>
     </div>
 </div>
 
@@ -22,7 +23,7 @@ const { article } = Astro.props;
         <div class="fappy_container">
             <iframe
                 loading="lazy"
-                src="https://v3.kalenwallin.com/portfoliov2"
+                src={article.pageUrl}
                 style="width: 100%; height: 95%;"></iframe>
             <button class="btn-block" type="button">Done</button>
         </div>
@@ -31,10 +32,10 @@ const { article } = Astro.props;
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const article = document.getElementById("data-article");
+        const idElement = document.getElementById("data-article");
 
         // Access the data-article attribute using optional chaining and provide a default value
-        const articleData = article?.dataset?.article ?? "0";
+        const articleData = idElement?.dataset?.id ?? "0";
         const id = articleData;
         const modal = document.getElementById(id);
         if (modal) {
