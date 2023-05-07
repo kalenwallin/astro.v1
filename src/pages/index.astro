@@ -1,15 +1,199 @@
 ---
+import Base from "../layouts/base.astro";
+const about = `Kalen Wallin, a fourth-year honors student at the University of Nebraska-Lincoln (UNL),
+            is passionately pursuing his degree in computer science. During his academic journey,
+            he had the unique opportunity to study abroad at Reykjavik University (RU) in Iceland for a semester.
+
+            Kalen’s enthusiasm for web development took root in elementary school when he completed
+            an online HTML and CSS course at Codecademy. It was during his time at UNL, however, that he
+            delved deeper into the complexities of programming languages beyond the basics.
+
+            Through a combination of academic coursework, personal projects, and an internship at
+            FarmAfield—an online marketplace for ownership investments—Kalen honed his skills in web development,
+            utilizing the Django tech stack. Additionally, he gained experience in game development and graphic
+            design through courses and extracurricular activities at UNL, RU, and Chase County Schools (CCS).
+            His game development journey began with “Fappy Borbs” in high school, continued with “Minieval”
+            during his undergraduate studies, and now includes collaboration with Mystic Rhoads Productions on his third project, “baldorf.”
+
+            An attentive, organized, and forward-thinking individual, Kalen consistently delivers results.
+            His ability to work effectively in teams ensures that all members contribute meaningfully, fostering steady progress.
+            Hailing from a family of farmers, he has learned the value of initiative and determination.
+
+            As he prepares to graduate from UNL in August 2023, Kalen actively seeks a full-stack web developer position.`;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro.v1</title>
-	</head>
-	<body>
-		<h1>About</h1>
-	</body>
-</html>
+<Base>
+    <header>
+        <div class="modal-header slide-in-from-bottom">
+            <h1>About Kalen</h1>
+        </div>
+    </header>
+
+    <div class="about-row slide-in-from-bottom-light">
+        <div class="about-column">
+            <p class="about-p">
+                {about}
+            </p>
+        </div>
+        <div class="about-column2">
+            <div class="card-left-about">
+                <img
+                    src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/suit.jpeg"
+                    alt="Photo of Kalen Wallin"
+                    style="width:100%"
+                />
+            </div>
+            <br />
+            <div class="about-icons">
+                <div class="light">
+                    <a href="mailto:kalenwallin1@gmail.com" target="_blank"
+                        ><img
+                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/mail.svg"
+                            height="31"
+                        /></a
+                    >
+                    <a
+                        href="https://www.linkedin.com/in/kalenwallin/"
+                        target="_blank"
+                        ><img
+                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/linkedin.svg"
+                            height="31"
+                        /></a
+                    >
+                    <a href="https://github.com/kalenwallin" target="_blank"
+                        ><img
+                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/github.svg"
+                            height="31"
+                        /></a
+                    >
+                </div>
+                <div class="dark">
+                    <a href="mailto:kalenwallin1@gmail.com" target="_blank"
+                        ><img
+                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/mail_dark.svg"
+                            height="31"
+                        /></a
+                    >
+                    <a
+                        href="https://www.linkedin.com/in/kalenwallin/"
+                        target="_blank"
+                        ><img
+                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/linkedin_dark.svg"
+                            height="31"
+                        /></a
+                    >
+                    <a href="https://github.com/kalenwallin" target="_blank"
+                        ><img
+                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/github_dark.svg"
+                            height="31"
+                        /></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-row slide-in-from-bottom-light">
+        <div class="about-column" style="width:100%">
+            <p class="about-p">
+                Here are some tools, frameworks, libraries, and coding languages
+                Kalen has worked with:
+                <br />
+                <div class="column pcol">
+                    <b>Advanced</b>
+                    <hr />
+                    <dl id="advanced-skills"></dl>
+                </div>
+                <div class="column pcol">
+                    <b>Intermediate</b>
+                    <hr />
+                    <dl id="intermediate-skills"></dl>
+                </div>
+                <div class="column pcol">
+                    <b>Beginner</b>
+                    <hr />
+                    <dl id="beginner-skills"></dl>
+                </div>
+            </p>
+        </div>
+    </div>
+    <br />
+    <script>
+        const imgLink =
+            "https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/";
+
+        const advanced = [
+            "VS Code",
+            "Figma",
+            "Adobe Express",
+            "GitHub",
+            "Microsoft Teams",
+            "Django",
+            "HTML & CSS",
+            "JavaScript",
+            "Python",
+        ];
+        const intermediate = [
+            "Adobe Creative Suite",
+            "Microsoft Office Suite",
+            "Visual Studio",
+            "Blazor",
+            "Razor Pages",
+            "Godot",
+            "PythonAnywhere",
+            "Unity",
+            "NodeJS",
+            "Vercel",
+            ".NET",
+            "ExpressJS",
+            "C",
+            "C#",
+            "GDScript",
+            "Java",
+            "Notion",
+        ];
+        const beginner = [
+            "Astro",
+            "Netlify",
+            "Eclipse",
+            "MySQL Workbench",
+            "ASP.NET Core",
+            "Amazon Web Services",
+            "CircleCI",
+            "Flutter",
+            "ANTLR",
+            "C++",
+            "Dart",
+            "Haskell",
+            "Prolog",
+            "SQL",
+            "XAML",
+        ];
+
+        function generateSkillsList(skills: any[]) {
+            return skills.map((skill) => `<dt>${skill}</dt>`).join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const advancedSkillsList =
+                document.getElementById("advanced-skills");
+            const intermediateSkillsList = document.getElementById(
+                "intermediate-skills"
+            );
+            const beginnerSkillsList =
+                document.getElementById("beginner-skills");
+
+            if (advancedSkillsList) {
+                advancedSkillsList.innerHTML = generateSkillsList(advanced);
+            }
+
+            if (intermediateSkillsList) {
+                intermediateSkillsList.innerHTML =
+                    generateSkillsList(intermediate);
+            }
+
+            if (beginnerSkillsList) {
+                beginnerSkillsList.innerHTML = generateSkillsList(beginner);
+            }
+        });
+    </script>
+</Base>

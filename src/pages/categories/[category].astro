@@ -1,0 +1,22 @@
+---
+import Base from "../../layouts/base.astro";
+export function getStaticPaths() {
+    return [
+        { params: { category: "Websites" } },
+        { params: { category: "Video Games" } },
+        { params: { category: "Mobile Apps" } },
+        { params: { category: "Work" } },
+        { params: { category: "Documents" } },
+        { params: { category: "Community Service" } },
+    ];
+}
+
+const { category } = Astro.params;
+---
+
+<Base>
+    <div class="modal-header slide-in-from-bottom">
+        <h1>{category}</h1>
+    </div>
+    
+</Base>

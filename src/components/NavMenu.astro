@@ -1,0 +1,179 @@
+---
+---
+
+<style>
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    .pl-4,
+    .px-4 {
+        padding-left: 1.5rem !important;
+    }
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+</style>
+<div class="sidebar" id="sidebar">
+    <div class="top-row pl-4 navbar navbar-dark">
+        <a class="navbar-brand" href="">Kalen Wallin</a>
+        <button class="navbar-toggler" id="navbar-toggler">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+    <div class="nav-menu" id="nav-menu">
+        <ul class="nav flex-column">
+            <li class="nav-item px-3">
+                <a class="nav-link" href="">
+                    <span class="oi oi-home" aria-hidden="true"></span> Home
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/categories/Websites">
+                    <span class="oi oi-browser" aria-hidden="true"></span> Websites
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/categories/Video Games">
+                    <span class="oi oi-monitor" aria-hidden="true"></span> Video
+                    Games
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/categories/Mobile Apps">
+                    <span class="oi oi-phone" aria-hidden="true"></span> Mobile Apps
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/categories/Work">
+                    <span class="oi oi-spreadsheet" aria-hidden="true"></span> Work
+                    Experience
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/categories/Documents">
+                    <span class="oi oi-document" aria-hidden="true"></span> Resume
+                    & Transcripts
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/categories/Community Service">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Community
+                    Service
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/stats">
+                    <span class="oi oi-bar-chart" aria-hidden="true"></span> Stats
+                </a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link">
+                    <span class="oi oi-moon" aria-hidden="true"></span>
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        id="dark-theme-toggle-button"
+                        class="dark-theme-toggle"
+                    />
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    let selectedTheme = "Light";
+
+    OnInitializedAsync();
+
+    const changeTheme = function (theme: string) {
+        if (theme == "Dark") {
+            document.body.classList.add("dark-theme");
+            document.documentElement.setAttribute("data-color-scheme", "dark");
+        } else {
+            document.body.classList.remove("dark-theme");
+            document.documentElement.setAttribute("data-color-scheme", "light");
+        }
+    };
+
+    let collapseNavMenu = true;
+    const navMenuToggler = document.getElementById("navbar-toggler");
+
+    if (navMenuToggler) {
+        navMenuToggler.addEventListener("click", ToggleNavMenu);
+    }
+
+    const darkModeToggle = document.querySelector("dark-theme-toggle-button");
+    if (darkModeToggle) darkModeToggle.addEventListener("click", () => {});
+
+    function ToggleNavMenu() {
+        collapseNavMenu = !collapseNavMenu;
+        const updatedNavMenuCssClass = collapseNavMenu ? "collapse" : null;
+        const navMenu = document.getElementById("nav-menu");
+
+        if (navMenu) {
+            if (updatedNavMenuCssClass) {
+                navMenu.className = updatedNavMenuCssClass;
+            } else {
+                navMenu.classList.remove("collapse");
+            }
+        }
+    }
+
+    async function OnInitializedAsync() {
+        const themeFromLocalStorage = await readLocalStorage("theme");
+        if (themeFromLocalStorage) {
+            selectedTheme = themeFromLocalStorage;
+            changeTheme(themeFromLocalStorage);
+        }
+
+        const darkThemeToggleButton = document.getElementById(
+            "dark-theme-toggle-button"
+        );
+
+        if (darkThemeToggleButton instanceof HTMLInputElement) {
+            if (selectedTheme === "Dark") {
+                darkThemeToggleButton.checked = true;
+            }
+
+            darkThemeToggleButton.addEventListener("change", ChangingTheme);
+        }
+    }
+
+    async function ChangingTheme() {
+        if (selectedTheme === "Light") {
+            selectedTheme = "Dark";
+            changeTheme(selectedTheme);
+        } else if (selectedTheme === "Dark") {
+            selectedTheme = "Light";
+            changeTheme(selectedTheme);
+        }
+        await addToLocalStorage("theme", selectedTheme);
+    }
+
+    function readLocalStorage(key: string) {
+        return new Promise<any>((resolve) => {
+            resolve(localStorage.getItem(key));
+        });
+    }
+
+    function addToLocalStorage(key: string, value: string) {
+        return new Promise<void>((resolve) => {
+            localStorage.setItem(key, value);
+            resolve();
+        });
+    }
+</script>
