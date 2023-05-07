@@ -1,5 +1,43 @@
 ---
 import Base from "../../layouts/base.astro";
+import Card from "../../components/Card.astro";
+const imgLink = "https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/";
+const pageLink = "https://v3.kalenwallin.com/";
+const webArticles = [
+    {
+        imgUrl: `${imgLink}portfoliov3.png`,
+        alt: "Portfolio version 3 Logo",
+        title: "Portfolio.v3",
+        description: "Next.js Developer",
+        id: "1",
+        pageUrl: `${pageLink}portfoliov3-development`,
+    },
+    {
+        imgUrl: `${imgLink}portfoliov2.png`,
+        alt: "Portfolio version 2 Logo",
+        title: "Portfolio.v2",
+        description: "Django Developer",
+        id: "2",
+        pageUrl: `${pageLink}portfoliov2`,
+    },
+    {
+        imgUrl: `${imgLink}portfoliov12.png`,
+        alt: "Portfolio version 1 Logo",
+        title: "Portfolio.v1",
+        description: "Blazor Developer",
+        id: "3",
+        pageUrl: `${pageLink}portfoliov1`,
+    },
+    {
+        imgUrl: `${imgLink}voting_system.png`,
+        alt: "Voting System Logo",
+        title: "Voting System",
+        description: ".NET Developer",
+        id: "4",
+        pageUrl: `${pageLink}voting-system`,
+    },
+];
+
 export function getStaticPaths() {
     return [
         { params: { category: "Websites" } },
@@ -18,5 +56,5 @@ const { category } = Astro.params;
     <div class="modal-header slide-in-from-bottom">
         <h1>{category}</h1>
     </div>
-    
+    {webArticles.map((article) => <Card article={article} />)}
 </Base>

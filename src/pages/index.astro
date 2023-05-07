@@ -1,25 +1,25 @@
 ---
 import Base from "../layouts/base.astro";
-const about = `Kalen Wallin, a fourth-year honors student at the University of Nebraska-Lincoln (UNL),
+const about1 = `Kalen Wallin, a fourth-year honors student at the University of Nebraska-Lincoln (UNL),
             is passionately pursuing his degree in computer science. During his academic journey,
-            he had the unique opportunity to study abroad at Reykjavik University (RU) in Iceland for a semester.
+            he had the unique opportunity to study abroad at Reykjavik University (RU) in Iceland for a semester.`;
 
-            Kalen’s enthusiasm for web development took root in elementary school when he completed
+const about2 = `Kalen’s enthusiasm for web development took root in elementary school when he completed
             an online HTML and CSS course at Codecademy. It was during his time at UNL, however, that he
-            delved deeper into the complexities of programming languages beyond the basics.
+            delved deeper into the complexities of programming languages beyond the basics.`;
 
-            Through a combination of academic coursework, personal projects, and an internship at
+const about3 = `Through a combination of academic coursework, personal projects, and an internship at
             FarmAfield—an online marketplace for ownership investments—Kalen honed his skills in web development,
             utilizing the Django tech stack. Additionally, he gained experience in game development and graphic
             design through courses and extracurricular activities at UNL, RU, and Chase County Schools (CCS).
             His game development journey began with “Fappy Borbs” in high school, continued with “Minieval”
-            during his undergraduate studies, and now includes collaboration with Mystic Rhoads Productions on his third project, “baldorf.”
+            during his undergraduate studies, and now includes collaboration with Mystic Rhoads Productions on his third project, “baldorf.”`;
 
-            An attentive, organized, and forward-thinking individual, Kalen consistently delivers results.
+const about4 = `An attentive, organized, and forward-thinking individual, Kalen consistently delivers results.
             His ability to work effectively in teams ensures that all members contribute meaningfully, fostering steady progress.
-            Hailing from a family of farmers, he has learned the value of initiative and determination.
+            Hailing from a family of farmers, he has learned the value of initiative and determination.`;
 
-            As he prepares to graduate from UNL in August 2023, Kalen actively seeks a full-stack web developer position.`;
+const about5 = `As he prepares to graduate from UNL in August 2023, Kalen actively seeks a full-stack web developer position.`;
 ---
 
 <Base>
@@ -32,7 +32,16 @@ const about = `Kalen Wallin, a fourth-year honors student at the University of N
     <div class="about-row slide-in-from-bottom-light">
         <div class="about-column">
             <p class="about-p">
-                {about}
+                {about1}
+            </p>
+            <p class="about-p">
+                {about2}
+            </p>
+            <p class="about-p">
+                {about3}
+            </p>
+            <p class="about-p">
+                {about4}
             </p>
         </div>
         <div class="about-column2">

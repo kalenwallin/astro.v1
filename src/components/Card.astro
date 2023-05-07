@@ -1,0 +1,47 @@
+---
+const { article } = Astro.props;
+---
+
+<article id="data-article" data-article={article}></article>
+<div class="column to-slide-bottom-light animate">
+    <div class="card">
+        <div class="img-container">
+            <img src={article.img} alt={article.alt} />
+        </div>
+        <div class="container">
+            <h4><b>{article.title}</b></h4>
+            <p>{article.description}</p>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id={article.id} class="modal">
+    <!-- Modal Content -->
+    <form class="modal-content notion animate">
+        <div class="fappy_container">
+            <iframe
+                loading="lazy"
+                src="https://v3.kalenwallin.com/portfoliov2"
+                style="width: 100%; height: 95%;"></iframe>
+            <button class="btn-block" type="button">Done</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const article = document.getElementById("data-article");
+
+        // Access the data-article attribute using optional chaining and provide a default value
+        const articleData = article?.dataset?.article ?? "0";
+        const id = articleData;
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = "none";
+            modal.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+        }
+    });
+</script>
