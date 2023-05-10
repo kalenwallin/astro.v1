@@ -1,6 +1,8 @@
 ---
 import "../styles/app.scss";
 import NavMenu from "../components/NavMenu.astro";
+
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -12,7 +14,7 @@ import NavMenu from "../components/NavMenu.astro";
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
         />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro.v1 | Kalen Wallin</title>
+        <title>{title} | Kalen Wallin</title>
         <meta charset="utf-8" />
         <meta
             name="description"

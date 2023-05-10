@@ -74,7 +74,7 @@ const { category } = Astro.params;
 const { rows } = Astro.props;
 ---
 
-<Base>
+<Base title={category}>
     <div class="modal-header slide-in-from-bottom">
         <h1>{category}</h1>
     </div>

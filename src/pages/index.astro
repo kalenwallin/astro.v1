@@ -22,7 +22,7 @@ const about4 = `An attentive, organized, and forward-thinking individual, Kalen 
 const about5 = `As he prepares to graduate from UNL in August 2023, Kalen actively seeks a full-stack web developer position.`;
 ---
 
-<Base>
+<Base title="About">
     <header>
         <div class="modal-header slide-in-from-bottom">
             <h1>About Kalen</h1>
@@ -31,6 +31,7 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
 
     <div class="about-row slide-in-from-bottom-light">
         <div class="about-column">
+            <p><b class="about-p">Bibliography</b></p>
             <p class="about-p">
                 {about1}
             </p>
@@ -112,24 +113,26 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
     </div>
     <div class="about-row slide-in-from-bottom-light">
         <div class="about-column" style="width:100%">
+            <p><b class="about-p">Skills</b></p>
             <p class="about-p">
-                Here are some tools, frameworks, libraries, and coding languages
-                Kalen has worked with:
+                Here are the tools, frameworks, libraries, and coding languages
+                Kalen has worked with, sorted by the time he last worked with
+                them.
                 <br />
                 <div class="column pcol">
-                    <b>Advanced</b>
+                    <b>Past Year</b>
                     <hr />
-                    <div id="advanced-skills"></div>
+                    <div id="recent-skills"></div>
                 </div>
                 <div class="column pcol">
-                    <b>Intermediate</b>
+                    <b>1-2 Years Ago</b>
                     <hr />
-                    <div id="intermediate-skills"></div>
+                    <div id="whileago-skills"></div>
                 </div>
                 <div class="column pcol">
-                    <b>Beginner</b>
+                    <b>3+ Years Ago</b>
                     <hr />
-                    <div id="beginner-skills"></div>
+                    <div id="longtimeago-skills"></div>
                 </div>
             </p>
         </div>
@@ -139,78 +142,73 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
         const imgLink =
             "https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/";
 
-        const advanced = [
-            "VS Code",
-            "Figma",
-            "Adobe Express",
-            "GitHub",
-            "Microsoft Teams",
+        const recent = [
+            "Amazon Web Services",
+            "Astro",
+            "Blazor",
+            "C#",
             "Django",
+            "Figma",
+            "GitHub",
             "HTML & CSS",
             "JavaScript",
+            "Microsoft Teams/Office",
+            "Netlify",
+            "NodeJS",
+            "Notion",
             "Python",
-        ];
-        const intermediate = [
-            "Adobe Creative Suite",
-            "Microsoft Office Suite",
+            "Unity",
+            "Vercel",
             "Visual Studio",
-            "Blazor",
-            "Razor Pages",
+            "VS Code",
+        ];
+        const whileAgo = [
+            "C",
+            "C++",
+            "CircleCI",
+            "ExpressJS",
+            "GDScript",
             "Godot",
             "PythonAnywhere",
-            "Unity",
-            "NodeJS",
-            "Vercel",
-            ".NET",
-            "ExpressJS",
-            "C",
-            "C#",
-            "GDScript",
-            "Java",
-            "Notion",
         ];
-        const beginner = [
-            "Astro",
-            "Netlify",
-            "Eclipse",
-            "MySQL Workbench",
-            "ASP.NET Core",
-            "Amazon Web Services",
-            "CircleCI",
-            "Flutter",
+        const longtimeago = [
             "ANTLR",
-            "C++",
+            "ASP.NET Core",
             "Dart",
+            "Eclipse",
+            "Flutter",
             "Haskell",
+            "Java",
+            "MySQL Workbench",
             "Prolog",
             "SQL",
             "XAML",
         ];
 
         function generateSkillsList(skills: any[]) {
-            return skills.map((skill) => `<p class="skills">${skill}</p>`).join("");
+            return skills
+                .map((skill) => `<p class="skills">${skill}</p>`)
+                .join("");
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            const advancedSkillsList =
-                document.getElementById("advanced-skills");
-            const intermediateSkillsList = document.getElementById(
-                "intermediate-skills"
-            );
-            const beginnerSkillsList =
-                document.getElementById("beginner-skills");
+            const recentSkillsList = document.getElementById("recent-skills");
+            const whileAgoSkillsList =
+                document.getElementById("whileago-skills");
+            const longtimeagoSkillsList =
+                document.getElementById("longtimeago-skills");
 
-            if (advancedSkillsList) {
-                advancedSkillsList.innerHTML = generateSkillsList(advanced);
+            if (recentSkillsList) {
+                recentSkillsList.innerHTML = generateSkillsList(recent);
             }
 
-            if (intermediateSkillsList) {
-                intermediateSkillsList.innerHTML =
-                    generateSkillsList(intermediate);
+            if (whileAgoSkillsList) {
+                whileAgoSkillsList.innerHTML = generateSkillsList(whileAgo);
             }
 
-            if (beginnerSkillsList) {
-                beginnerSkillsList.innerHTML = generateSkillsList(beginner);
+            if (longtimeagoSkillsList) {
+                longtimeagoSkillsList.innerHTML =
+                    generateSkillsList(longtimeago);
             }
         });
     </script>
