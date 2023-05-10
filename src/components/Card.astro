@@ -5,7 +5,7 @@ interface Props {
 const { article } = Astro.props;
 ---
 
-<article id="data-article" data-article={article.id}></article>
+<article id="article-id" data-article={article.id}></article>
 <div class="card">
     <div class="img-container">
         <img src={article.imgUrl} alt={article.alt} />
@@ -16,9 +16,7 @@ const { article } = Astro.props;
     </div>
 </div>
 
-<!-- The Modal -->
 <div id={article.id} class="modal">
-    <!-- Modal Content -->
     <form class="modal-content notion animate">
         <div class="fappy_container">
             <iframe
@@ -32,11 +30,9 @@ const { article } = Astro.props;
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const idElement = document.getElementById("data-article");
-
-        // Access the data-article attribute using optional chaining and provide a default value
-        const articleData = idElement?.dataset?.id ?? "0";
-        const id = articleData;
+        // Get the id of the article from props
+        const idElement = document.getElementById("article-id");
+        const id = idElement?.dataset.article!;
         const modal = document.getElementById(id);
         if (modal) {
             modal.style.display = "none";
