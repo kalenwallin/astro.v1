@@ -1,5 +1,4 @@
 ---
-const { page } = Astro.props;
 ---
 
 <style>
@@ -144,24 +143,17 @@ const { page } = Astro.props;
         const darkThemeToggleButton = document.getElementById(
             "dark-theme-toggle-button"
         );
-
         if (darkThemeToggleButton instanceof HTMLInputElement) {
             if (selectedTheme === "Dark") {
                 darkThemeToggleButton.checked = true;
             }
-
             darkThemeToggleButton.addEventListener("change", ChangingTheme);
         }
     }
 
     async function ChangingTheme() {
-        if (selectedTheme === "Light") {
-            selectedTheme = "Dark";
-            changeTheme(selectedTheme);
-        } else if (selectedTheme === "Dark") {
-            selectedTheme = "Light";
-            changeTheme(selectedTheme);
-        }
+        selectedTheme = selectedTheme === "Light" ? "Dark" : "Light";
+        changeTheme(selectedTheme);
         await addToLocalStorage("theme", selectedTheme);
     }
 
@@ -177,4 +169,13 @@ const { page } = Astro.props;
             resolve();
         });
     }
+
+    document.querySelectorAll(".nav-link").forEach((link) => {
+        if (
+            link instanceof HTMLAnchorElement &&
+            link.href === window.location.href
+        ) {
+            link.setAttribute("aria-current", "page");
+        }
+    });
 </script>

@@ -1,6 +1,6 @@
 ---
-import NavMenu from "../components/NavMenu.astro";
 import "../styles/app.scss";
+import NavMenu from "../components/NavMenu.astro";
 ---
 
 <html lang="en">
@@ -55,7 +55,7 @@ import "../styles/app.scss";
     </head>
     <body>
         <app>
-            <slot name="sidebar" />
+            <NavMenu />
             <div class="main">
                 <div class="content px-4">
                     <slot />

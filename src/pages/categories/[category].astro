@@ -1,7 +1,6 @@
 ---
 import Base from "../../layouts/base.astro";
 import Row from "../../components/Row.astro";
-import NavMenu from "../../components/NavMenu.astro";
 
 export function getStaticPaths() {
     const imgLink =
@@ -76,7 +75,6 @@ const { rows } = Astro.props;
 ---
 
 <Base>
-    <NavMenu slot="sidebar" />
     <div class="modal-header slide-in-from-bottom">
         <h1>{category}</h1>
     </div>
