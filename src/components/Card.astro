@@ -3,10 +3,11 @@ interface Props {
     article?: any;
 }
 const { article } = Astro.props;
+const cardID = `card-${article.id}`;
 ---
 
 <article id="article-id" data-article={article.id}></article>
-<div class="card">
+<div id={cardID} class="card">
     <div class="img-container">
         <img src={article.imgUrl} alt={article.alt} />
     </div>
@@ -17,7 +18,7 @@ const { article } = Astro.props;
 </div>
 
 <div id={article.id} class="modal">
-    <form class="modal-content notion animate">
+    <div class="modal-content notion animate">
         <div class="fappy_container">
             <iframe
                 loading="lazy"
@@ -25,7 +26,7 @@ const { article } = Astro.props;
                 style="width: 100%; height: 95%;"></iframe>
             <button class="btn-block" type="button">Done</button>
         </div>
-    </form>
+    </div>
 </div>
 
 <script>
@@ -33,11 +34,18 @@ const { article } = Astro.props;
         // Get the id of the article from props
         const idElement = document.getElementById("article-id");
         const id = idElement?.dataset.article!;
+        console.log(id);
         const modal = document.getElementById(id);
-        if (modal) {
+        console.log(modal);
+        const card = document.getElementById("card-" + id);
+        console.log(card);
+        if (modal && card) {
             modal.style.display = "none";
             modal.addEventListener("click", () => {
                 modal.style.display = "none";
+            });
+            card.addEventListener("click", () => {
+                modal.style.display = "block";
             });
         }
     });
