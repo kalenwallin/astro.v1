@@ -1,5 +1,5 @@
 ---
-
+const { page } = Astro.props;
 ---
 
 <style>
@@ -27,15 +27,14 @@
         padding: 0.5rem 1rem;
     }
 </style>
-<div class="sidebar" id="sidebar">
+<div class="sidebar" id="sidebar" slot="sidebar">
     <div class="top-row pl-4 navbar navbar-dark">
         <a class="navbar-brand" href="">Kalen Wallin</a>
         <button class="navbar-toggler" id="navbar-toggler">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
-
-    <div class="nav-menu" id="nav-menu">
+    <div class="nav-menu collapse" id="nav-menu">
         <ul class="nav flex-column">
             <li class="nav-item px-3">
                 <a class="nav-link" href="">
@@ -112,9 +111,11 @@
 
     let collapseNavMenu = true;
     const navMenuToggler = document.getElementById("navbar-toggler");
+    const navMenu = document.getElementById("nav-menu");
 
-    if (navMenuToggler) {
+    if (navMenuToggler && navMenu) {
         navMenuToggler.addEventListener("click", ToggleNavMenu);
+        navMenu.addEventListener("click", ToggleNavMenu);
     }
 
     const darkModeToggle = document.querySelector("dark-theme-toggle-button");
@@ -123,11 +124,10 @@
     function ToggleNavMenu() {
         collapseNavMenu = !collapseNavMenu;
         const updatedNavMenuCssClass = collapseNavMenu ? "collapse" : null;
-        const navMenu = document.getElementById("nav-menu");
 
         if (navMenu) {
             if (updatedNavMenuCssClass) {
-                navMenu.className = updatedNavMenuCssClass;
+                navMenu.classList.add("collapse");
             } else {
                 navMenu.classList.remove("collapse");
             }
