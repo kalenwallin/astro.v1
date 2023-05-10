@@ -119,17 +119,17 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
                 <div class="column pcol">
                     <b>Advanced</b>
                     <hr />
-                    <dl id="advanced-skills"></dl>
+                    <div id="advanced-skills"></div>
                 </div>
                 <div class="column pcol">
                     <b>Intermediate</b>
                     <hr />
-                    <dl id="intermediate-skills"></dl>
+                    <div id="intermediate-skills"></div>
                 </div>
                 <div class="column pcol">
                     <b>Beginner</b>
                     <hr />
-                    <dl id="beginner-skills"></dl>
+                    <div id="beginner-skills"></div>
                 </div>
             </p>
         </div>
@@ -188,7 +188,7 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
         ];
 
         function generateSkillsList(skills: any[]) {
-            return skills.map((skill) => `<dt>${skill}</dt>`).join("");
+            return skills.map((skill) => `<p class="skills">${skill}</p>`).join("");
         }
 
         document.addEventListener("DOMContentLoaded", () => {
