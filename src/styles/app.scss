@@ -21,70 +21,70 @@ body {
 }
 
 /*dark-theme start*/
-body.dark-theme .stats-col.dark {
+:root.dark-theme .stats-col.dark {
     display: block;
 }
 
-body.dark-theme .about-icons .dark {
+:root.dark-theme .about-icons .dark {
     display: flex;
 }
 
-body.dark-theme .stats-col,
-body.dark-theme .about-icons .light {
+:root.dark-theme .stats-col,
+:root.dark-theme .about-icons .light {
     display: none;
 }
 
-body.dark-theme .sidebar dark {
+:root.dark-theme .sidebar dark {
     background-image: linear-gradient(#c06c84, #6c5b7b, #355c7d);
     transition: ease 0.3s;
 }
 
-body.dark-theme .navbar-dark .navbar-brand {
-    color: #959595;
-    transition: ease 0.3s;
-}
-
-body.dark-theme .sidebar .nav-item a {
+:root.dark-theme .navbar-dark .navbar-brand {
     color: #c3c3c3;
     transition: ease 0.3s;
 }
 
-body.dark-theme .modal-header {
+:root.dark-theme .sidebar .nav-item a {
+    color: #c3c3c3;
+    transition: ease 0.3s;
+}
+
+:root.dark-theme .modal-header {
     border-bottom: 1px solid #646464;
 }
 
-body.dark-theme,
-body.dark-theme body {
+:root.dark-theme,
+:root.dark-theme body {
     color: #c3c3c3;
     background-color: #1e1e1e;
     transition: ease 0.3s;
 }
 
-body.dark-theme .card {
+:root.dark-theme .card {
     background-color: #121212;
 }
 
-body.dark-theme .modal-content {
+:root.dark-theme .modal-content {
     background-color: #1e1e1e;
     border: 1px solid #000;
 }
 
-body.dark-theme h2 {
+:root.dark-theme h2 {
     color: #c3c3c3;
 }
 
-body.dark-theme a,
-body.dark-theme .btn-link {
+:root.dark-theme a,
+:root.dark-theme .btn-link {
     color: #5297ff;
     transition: ease 0.3s;
 }
 
-body.dark-theme .sidebar {
+:root.dark-theme .sidebar {
     background-image: linear-gradient(#c06c84, #6c5b7b, #355c7d);
     transition: ease 0.3s;
 }
 
-body.dark-theme .btn-block {
+:root.dark-theme .btn-block {
     display: block;
     width: 100%;
     color: #c3c3c3;
@@ -94,7 +94,7 @@ body.dark-theme .btn-block {
     appearance: none;
 }
 
-body.dark-theme .btn-block:hover {
+:root.dark-theme .btn-block:hover {
     display: block;
     width: 100%;
     color: #939393;
@@ -104,17 +104,17 @@ body.dark-theme .btn-block:hover {
     appearance: none;
 }
 
-body.dark-theme .btn-block:focus {
+:root.dark-theme .btn-block:focus {
     border: 1px solid #000;
     -webkit-appearance: none;
     appearance: none;
 }
 
-body.dark-theme button:focus {
+:root.dark-theme button:focus {
     outline: none;
 }
 
-body.dark-theme hr {
+:root.dark-theme hr {
     border-top: 1px solid rgb(255 255 255 / 10%);
 }
 
@@ -291,7 +291,7 @@ app {
 .sidebar .nav-item a.active,
 .sidebar .nav-item a[aria-current="page"] {
     background-color: rgba(255, 255, 255, 0.25);
-    color: white;
+    color: white !important;
     transition: ease 0.3s;
 }
 
@@ -680,68 +680,6 @@ img {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
-}
-
-/* Toggle Button */
-.dark-theme-toggle {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-tap-highlight-color: transparent;
-    position: relative;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    margin-top: 9.5px;
-    /* -25.5px on iPad*/
-}
-
-/* To create surface of toggle button */
-.dark-theme-toggle:after {
-    content: "";
-    width: 33.75px;
-    height: 18px;
-    display: inline-block;
-    background: rgba(196, 195, 195, 0.55);
-    border-radius: 15.1875px;
-    clear: both;
-}
-
-/* Contents before checkbox to create toggle handle */
-.dark-theme-toggle:before {
-    content: "";
-    width: 18.75px;
-    height: 20.25px;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 9.5px;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    transition: ease 0.3s;
-    -webkit-transition: ease 0.3s;
-    -moz-transition: ease 0.3s;
-    -o-transition: ease 0.3s;
-}
-
-/* Shift the handle to left on check event */
-.dark-theme-toggle:checked:before {
-    left: 18px;
-    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
-    transition: ease 0.3s;
-    -webkit-transition: ease 0.3s;
-    -moz-transition: ease 0.3s;
-    -o-transition: ease 0.3s;
-}
-
-/* Background color when toggle button will be active */
-.dark-theme-toggle:checked:after {
-    background: #355c7d;
-    transition: ease 0.3s;
-    -webkit-transition: ease 0.3s;
-    -moz-transition: ease 0.3s;
-    -o-transition: ease 0.3s;
 }
 
 /*iPad Pro 11" 3rd gen*/

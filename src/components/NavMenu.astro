@@ -1,4 +1,5 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <style>
@@ -82,33 +83,13 @@
             <li class="nav-item px-3">
                 <div class="nav-link">
                     <span class="oi oi-moon" aria-hidden="true"></span>
-                    <input
-                        aria-label="Dark Mode Toggle"
-                        type="checkbox"
-                        name="checkbox"
-                        id="dark-theme-toggle-button"
-                        class="dark-theme-toggle"
-                    />
+                    <ThemeToggle />
                 </div>
             </li>
         </ul>
     </div>
 </div>
 <script>
-    let selectedTheme = "Light";
-
-    OnInitializedAsync();
-
-    const changeTheme = function (theme: string) {
-        if (theme == "Dark") {
-            document.body.classList.add("dark-theme");
-            document.documentElement.setAttribute("data-color-scheme", "dark");
-        } else {
-            document.body.classList.remove("dark-theme");
-            document.documentElement.setAttribute("data-color-scheme", "light");
-        }
-    };
-
     let collapseNavMenu = true;
     const navMenuToggler = document.getElementById("navbar-toggler");
     const navMenu = document.getElementById("nav-menu");
@@ -117,9 +98,6 @@
         navMenuToggler.addEventListener("click", ToggleNavMenu);
         navMenu.addEventListener("click", ToggleNavMenu);
     }
-
-    const darkModeToggle = document.querySelector("dark-theme-toggle-button");
-    if (darkModeToggle) darkModeToggle.addEventListener("click", () => {});
 
     function ToggleNavMenu() {
         collapseNavMenu = !collapseNavMenu;
@@ -132,43 +110,6 @@
                 navMenu.classList.remove("collapse");
             }
         }
-    }
-
-    async function OnInitializedAsync() {
-        const themeFromLocalStorage = await readLocalStorage("theme");
-        if (themeFromLocalStorage) {
-            selectedTheme = themeFromLocalStorage;
-            changeTheme(themeFromLocalStorage);
-        }
-
-        const darkThemeToggleButton = document.getElementById(
-            "dark-theme-toggle-button"
-        );
-        if (darkThemeToggleButton instanceof HTMLInputElement) {
-            if (selectedTheme === "Dark") {
-                darkThemeToggleButton.checked = true;
-            }
-            darkThemeToggleButton.addEventListener("change", ChangingTheme);
-        }
-    }
-
-    async function ChangingTheme() {
-        selectedTheme = selectedTheme === "Light" ? "Dark" : "Light";
-        changeTheme(selectedTheme);
-        await addToLocalStorage("theme", selectedTheme);
-    }
-
-    function readLocalStorage(key: string) {
-        return new Promise<any>((resolve) => {
-            resolve(localStorage.getItem(key));
-        });
-    }
-
-    function addToLocalStorage(key: string, value: string) {
-        return new Promise<void>((resolve) => {
-            localStorage.setItem(key, value);
-            resolve();
-        });
     }
 
     document.querySelectorAll(".nav-link").forEach((link) => {
