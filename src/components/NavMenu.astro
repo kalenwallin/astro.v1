@@ -115,7 +115,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     document.querySelectorAll(".nav-link").forEach((link) => {
         if (
             link instanceof HTMLAnchorElement &&
-            link.href === window.location.href
+            link.href.toLowerCase() === window.location.href.toLowerCase()
         ) {
             link.setAttribute("aria-current", "page");
         }
