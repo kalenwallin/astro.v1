@@ -1,5 +1,6 @@
 ---
 ---
+
 <theme-toggle>
     <input
         aria-label="Dark Mode Toggle"
@@ -87,6 +88,9 @@
                     "dark-theme"
                 );
                 button.setAttribute("aria-pressed", String(dark));
+                if (dark) {
+                    button.setAttribute("checked", String(dark));
+                }
             };
 
             // Toggle the theme when a user clicks the button.
