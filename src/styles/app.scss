@@ -57,7 +57,6 @@ body {
 :root.dark-theme body {
     color: #c3c3c3;
     background-color: #1e1e1e;
-    transition: ease 0.3s;
 }
 
 :root.dark-theme .card {
@@ -132,7 +131,6 @@ body {
 html,
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    transition: ease 0.3s;
 }
 
 .sidebar {
@@ -182,7 +180,6 @@ button:focus {
 
 h2 {
     color: grey;
-    transition: ease 0.3s;
 }
 
 .modal-content h2 {
@@ -222,7 +219,6 @@ app {
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
-    transition: ease 0.3s;
 }
 
 .main .top-row > a,
@@ -239,12 +235,10 @@ app {
 .og-sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
     transition: ease 0.3s;
-    transition: ease 0.3s;
 }
 
 .sidebar {
     background-image: linear-gradient(#355c7d, #6c5b7b, #c06c84);
-    transition: ease 0.3s;
     transition: ease 0.3s;
 }
 
@@ -284,7 +278,6 @@ app {
     display: flex;
     align-items: center;
     line-height: 3rem;
-    transition: ease 0.3s;
     transition: ease 0.3s;
 }
 
@@ -452,7 +445,6 @@ app {
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
     width: 100%;
     max-height: 100%;
     transition: ease 0.3s;
@@ -463,19 +455,6 @@ app {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transform: scale(1.05);
-}
-
-.card-left-about {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    width: 100%;
-    height: 100%;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card-left-about:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 img {
@@ -527,6 +506,16 @@ img {
     display: flex;
 }
 
+@media screen and (max-width: 1152px) {
+    .pcol {
+        width: 50%;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .content {
         padding-right: 3rem !important;
@@ -546,16 +535,6 @@ img {
     }
 }
 
-@media screen and (max-width: 1152px) {
-    .pcol {
-        width: 50%;
-    }
-
-    .stats-container {
-        flex-direction: column;
-    }
-}
-
 @media screen and (max-width: 844px) {
     .pcol {
         width: 100%;
@@ -565,13 +544,13 @@ img {
 .card .container {
     max-height: 0;
     padding: 0px;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.5s ease-out;
     overflow: hidden;
 }
 
 .card:hover .container {
     max-height: 500px;
-    transition: max-height 0.25s ease-in;
+    transition: max-height 0.5s ease-in;
 }
 
 .container h4 {
@@ -769,11 +748,11 @@ img {
 }
 
 .slide-in-from-bottom {
-    animation: 750ms ease 0s 1 slideInFromBottom;
+    animation: 500ms ease 0s 1 slideInFromBottom;
 }
 
 .slide-in-from-bottom-light {
-    animation: 750ms ease 0s 1 slideInFromBottomLight;
+    animation: 500ms ease 0s 1 slideInFromBottomLight;
 }
 
 .already-visible {
