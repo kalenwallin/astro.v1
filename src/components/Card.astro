@@ -6,7 +6,6 @@ const { article } = Astro.props;
 const cardID = `card-${article.id}`;
 ---
 
-<article id="article-id" data-article={article.id}></article>
 <div id={cardID} class="card">
     <div class="img-container">
         <img src={article.imgUrl} alt={article.alt} />
