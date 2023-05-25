@@ -9,7 +9,7 @@ const { row } = Astro.props;
 <div class="row slide-in-from-bottom-light">
     {
         row.map((post) => (
-            <div class="column to-slide-bottom-light animate">
+            <div class="column to-slide-bottom-light slide-in-from-bottom-light animate">
                 <Card article={post} />
             </div>
         ))
