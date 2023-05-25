@@ -30,26 +30,8 @@ const cardID = `card-${article.id}`;
 </div>
 
 <script>
-    // Get the id of the article from props
-    // const idElement = document.getElementById("article-id");
-    // const id = idElement?.dataset.article!;
-    // console.log(id);
-    // const modal = document.getElementById(id);
-    // console.log(modal);
-    // const card = document.getElementById("card-" + id);
-    // console.log(card);
-    // if (modal && card) {
-    //     modal.style.display = "none";
-    //     modal.addEventListener("click", () => {
-    //         modal.style.display = "none";
-    //     });
-    //     card.addEventListener("click", () => {
-    //         modal.style.display = "block";
-    //     });
-    // }
-
-    const cards = document.querySelectorAll(".card");
-    const modals = document.querySelectorAll(".modal");
+    const cards = document.querySelectorAll<HTMLElement>(".card");
+    const modals = document.querySelectorAll<HTMLElement>(".modal");
     cards.forEach((card, i) => {
         card.addEventListener("click", () => {
             modals[i].style.display = "block";
