@@ -399,10 +399,6 @@ app {
         text-align: center;
     }
 
-    .content {
-        padding-right: 3rem !important;
-    }
-
     p,
     h4 {
         text-align: left;
@@ -522,12 +518,16 @@ img {
 
 @media screen and (max-width: 767px) {
     .content {
-        padding-right: 3rem !important;
+        padding-right: 0rem;
     }
 
     .column {
         width: 100%;
         text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     dd {
@@ -536,6 +536,10 @@ img {
 
     .pcol {
         text-align: left;
+    }
+
+    .modal-header {
+        margin-left: 0rem;
     }
 }
 
@@ -816,6 +820,5 @@ iframe {
 }
 
 .skills {
-    font-weight: 700;
     margin: 0px;
 }
