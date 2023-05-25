@@ -179,7 +179,7 @@ const { rows } = Astro.props;
 ---
 
 <Base title={category}>
-    <div class="modal-header slide-in-from-bottom">
+    <div class="modal-header">
         <h1>{category}</h1>
     </div>
     {rows.map((row) => <Row row={row} />)}

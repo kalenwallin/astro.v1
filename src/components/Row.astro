@@ -6,10 +6,10 @@ interface Props {
 const { row } = Astro.props;
 ---
 
-<div class="row slide-in-from-bottom-light">
+<div class="row">
     {
         row.map((post) => (
-            <div class="column to-slide-bottom-light slide-in-from-bottom-light animate">
+            <div class="column animate">
                 <Card article={post} />
             </div>
         ))
