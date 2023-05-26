@@ -379,6 +379,12 @@ app {
     .about-column,
     .about-column2 {
         width: 100%;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    .about-p {
+        margin-left: 0rem;
     }
 
     .about-row {
@@ -480,7 +486,7 @@ img {
     padding-right: 0;
     margin-left: -1rem;
     width: 33%;
-    text-align: left;
+    text-align: left !important;
 }
 
 /* Clear floats after the columns */
@@ -515,23 +521,6 @@ img {
         padding-right: 0rem;
     }
 
-    .column {
-        width: 100%;
-        text-align: center;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .column.first {
-        padding-top: 2rem;
-    }
-
-    .column.last {
-        padding-bottom: 2rem;
-    }
-
     dd {
         margin-left: 0;
     }
@@ -541,7 +530,7 @@ img {
     }
 
     .modal-header {
-        margin-left: 0rem;
+        margin: 0rem;
     }
 }
 
@@ -550,17 +539,18 @@ img {
         width: 100%;
     }
 }
+@media (hover: hover) {
+    .card .container {
+        max-height: 0;
+        padding: 0px;
+        transition: max-height 0.5s ease-out;
+        overflow: hidden;
+    }
 
-.card .container {
-    max-height: 0;
-    padding: 0px;
-    transition: max-height 0.5s ease-out;
-    overflow: hidden;
-}
-
-.card:hover .container {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+    .card:hover .container {
+        max-height: 500px;
+        transition: max-height 0.5s ease-in;
+    }
 }
 
 .container h4 {
@@ -654,6 +644,23 @@ img {
         width: 100%;
         /* Could be more or less, depending on screen size */
         transition: ease 0.3s;
+    }
+
+    .column {
+        width: 100%;
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .column.first {
+        padding-top: 2rem;
+    }
+
+    .column.last {
+        padding-bottom: 2rem;
     }
 }
 
