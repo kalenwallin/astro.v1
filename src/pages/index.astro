@@ -24,7 +24,22 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
 
 <style>
     b {
-        color: dodgerblue;
+        color: #405a7a;
+    }
+    :root.dark-theme b {
+        color: #ce9bb1;
+    }
+    @media (max-width: 767px) {
+        .pcol {
+            padding-left: 0rem;
+        }
+    }
+    .about-column hr {
+        margin-left: -1rem;
+    }
+
+    .pcol hr {
+        margin-left: 0rem;
     }
 </style>
 <Base title="About">
@@ -37,6 +52,7 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
     <div class="about-row">
         <div class="about-column">
             <p><b class="about-p">Bibliography</b></p>
+            <hr />
             <p class="about-p">
                 {about1}
             </p>
@@ -135,6 +151,7 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit1400.jpg 1400w"
     <div class="about-row">
         <div class="about-column" style="width:100%">
             <p><b class="about-p">Skills</b></p>
+            <hr />
             <p class="about-p">
                 Here are the tools, frameworks, libraries, and coding languages
                 Kalen has worked with, sorted by the time he last worked with
@@ -142,17 +159,14 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit1400.jpg 1400w"
                 <br />
                 <div class="column pcol">
                     <b>Past Year</b>
-                    <hr />
                     <div id="recent-skills"></div>
                 </div>
                 <div class="column pcol">
                     <b>1-2 Years Ago</b>
-                    <hr />
                     <div id="whileago-skills"></div>
                 </div>
                 <div class="column pcol">
                     <b>3+ Years Ago</b>
-                    <hr />
                     <div id="longtimeago-skills"></div>
                 </div>
             </p>
