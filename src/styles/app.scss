@@ -2,6 +2,10 @@
 @import "https://fonts.googleapis.com/css?family=Muli&display=swap";
 @import "bootstrap/bootstrap.min.css";
 
+:root {
+    color-scheme: light;
+}
+
 body {
     margin: 0px;
 }
@@ -21,6 +25,10 @@ body {
 }
 
 /*dark-theme start*/
+:root.dark-theme {
+    color-scheme: dark;
+}
+
 :root.dark-theme .stats-col.dark {
     display: block;
 }
@@ -123,15 +131,6 @@ body {
 
 /*dark-theme end*/
 
-/* scrollbar dark theme */
-[data-color-scheme="dark"] {
-    color-scheme: dark;
-}
-
-[data-color-scheme="light"] {
-    color-scheme: light;
-}
-
 html,
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -141,15 +140,14 @@ body {
     overflow: auto;
 }
 
+.modal-header {
+    padding: 1rem 0rem;
+    margin: 0rem 1rem;
+}
+
 /* shift items left to align with cards */
 .about-p {
     margin-left: -1rem;
-}
-
-/* shift items right to align with cards */
-.modal-header,
-.home-p {
-    margin-left: 1rem;
 }
 
 .btn-block {
@@ -381,6 +379,12 @@ app {
     .about-column,
     .about-column2 {
         width: 100%;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    .about-p {
+        margin-left: 0rem;
     }
 
     .about-row {
@@ -422,10 +426,10 @@ app {
         top: 0;
     }
 
-    .main > div {
-        padding-left: 2rem !important;
-        padding-right: 3rem !important;
-    }
+    // .main > div {
+    //     padding-left: 2rem !important;
+    //     padding-right: 3rem !important;
+    // }
 
     .navbar-toggler {
         display: none;
@@ -434,11 +438,6 @@ app {
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
         display: block;
-    }
-
-    .modal-header h1,
-    h2 {
-        margin-left: -1rem;
     }
 }
 
@@ -477,8 +476,8 @@ img {
 .column {
     float: left;
     width: 33.33%;
-    padding-left: 2rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 2rem;
 }
 
@@ -487,7 +486,7 @@ img {
     padding-right: 0;
     margin-left: -1rem;
     width: 33%;
-    text-align: left;
+    text-align: left !important;
 }
 
 /* Clear floats after the columns */
@@ -507,7 +506,8 @@ img {
 }
 
 @media screen and (max-width: 1152px) {
-    .pcol {
+    .pcol,
+    .column {
         width: 50%;
     }
 
@@ -521,15 +521,6 @@ img {
         padding-right: 0rem;
     }
 
-    .column {
-        width: 100%;
-        text-align: center;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
     dd {
         margin-left: 0;
     }
@@ -539,7 +530,7 @@ img {
     }
 
     .modal-header {
-        margin-left: 0rem;
+        margin: 0rem;
     }
 }
 
@@ -548,17 +539,18 @@ img {
         width: 100%;
     }
 }
+@media (hover: hover) {
+    .card .container {
+        max-height: 0;
+        padding: 0px;
+        transition: max-height 0.5s ease-out;
+        overflow: hidden;
+    }
 
-.card .container {
-    max-height: 0;
-    padding: 0px;
-    transition: max-height 0.5s ease-out;
-    overflow: hidden;
-}
-
-.card:hover .container {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+    .card:hover .container {
+        max-height: 500px;
+        transition: max-height 0.5s ease-in;
+    }
 }
 
 .container h4 {
@@ -652,6 +644,23 @@ img {
         width: 100%;
         /* Could be more or less, depending on screen size */
         transition: ease 0.3s;
+    }
+
+    .column {
+        width: 100%;
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .column.first {
+        padding-top: 2rem;
+    }
+
+    .column.last {
+        padding-bottom: 2rem;
     }
 }
 
