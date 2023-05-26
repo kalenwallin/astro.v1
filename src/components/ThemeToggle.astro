@@ -66,7 +66,7 @@
     }
 
     /* Background color when toggle button will be active */
-    :root.dark-theme .dark-theme-toggle:checked:after {
+    :root.dark-theme .dark-theme-toggle:after {
         background: #355c7d;
         transition: ease 0.3s;
         -webkit-transition: ease 0.3s;
@@ -88,9 +88,6 @@
                     "dark-theme"
                 );
                 button.setAttribute("aria-pressed", String(dark));
-                if (dark) {
-                    button.setAttribute("checked", String(dark));
-                }
             };
 
             // Toggle the theme when a user clicks the button.
