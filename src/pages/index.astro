@@ -20,6 +20,20 @@ const about4 = `An attentive, organized, and forward-thinking individual, Kalen 
             Hailing from a family of farmers, he has learned the value of initiative and determination.`;
 
 const about5 = `As he prepares to graduate from UNL in August 2023, Kalen actively seeks a full-stack web developer position.`;
+
+const suitImgSrcSet = `"
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit200.jpg 200w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit612.jpg 612w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit749.jpg 749w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit848.jpg 848w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit993.jpg 993w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit1087.jpg 1087w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit1086.jpg 1086w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit1250.jpg 1250w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit1351.jpg 1351w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit1375.jpg 1375w,
+https://i.kalenwallin.com/file/portfoliov2/sharex/suit1400.jpg 1400w`;
 ---
 
 <style>
@@ -34,6 +48,14 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
             padding-left: 0rem;
             margin-left: 0rem;
         }
+        picture {
+            display: flex;
+            justify-content: center;
+        }
+        picture img {
+            height: 75vh;
+            margin: auto;
+        }
     }
     .about-column hr {
         margin-left: -1rem;
@@ -41,6 +63,10 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
 
     .pcol hr {
         margin-left: 0rem;
+    }
+
+    .about-icons img:hover {
+        filter: brightness(0.8);
     }
 </style>
 <Base title="About">
@@ -75,76 +101,75 @@ const about5 = `As he prepares to graduate from UNL in August 2023, Kalen active
                 <picture>
                     <img
                         sizes="(max-width: 1400px) 100vw, 1400px"
-                        srcset="
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit200.jpg 200w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit612.jpg 612w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit749.jpg 749w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit848.jpg 848w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit993.jpg 993w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit1087.jpg 1087w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit1086.jpg 1086w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit1250.jpg 1250w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit1351.jpg 1351w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit1375.jpg 1375w,
-https://i.kalenwallin.com/file/portfoliov2/sharex/suit1400.jpg 1400w"
+                        srcset={suitImgSrcSet}
                         src="https://i.kalenwallin.com/file/portfoliov2/sharex/suit1400.jpg"
                         alt="Photo of Kalen Wallin"
-                        style="width:100%"
+                        style=""
                     />
                 </picture>
             </div>
-            <br />
             <div class="about-icons">
                 <div class="light">
-                    <a href="mailto:kalenwallin1@gmail.com" target="_blank"
-                        ><img
-                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/mail.svg"
-                            alt="Mail Icon"
-                            height="31"
-                        /></a
-                    >
-                    <a
-                        href="https://www.linkedin.com/in/kalenwallin/"
-                        target="_blank"
-                        ><img
-                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/linkedin.svg"
-                            alt="LinkedIn Icon"
-                            height="31"
-                        /></a
-                    >
-                    <a href="https://github.com/kalenwallin" target="_blank"
-                        ><img
-                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/github.svg"
-                            alt="GitHub Icon"
-                            height="31"
-                        /></a
-                    >
+                    <div class="column">
+                        <a href="mailto:kalenwallin1@gmail.com" target="_blank"
+                            ><img
+                                src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/mail.svg"
+                                alt="Mail Icon"
+                                height="31"
+                            /></a
+                        >
+                    </div>
+                    <div class="column">
+                        <a
+                            href="https://www.linkedin.com/in/kalenwallin/"
+                            target="_blank"
+                            ><img
+                                src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/linkedin.svg"
+                                alt="LinkedIn Icon"
+                                height="31"
+                            /></a
+                        >
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/kalenwallin" target="_blank"
+                            ><img
+                                src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/github.svg"
+                                alt="GitHub Icon"
+                                height="31"
+                            /></a
+                        >
+                    </div>
                 </div>
                 <div class="dark">
-                    <a href="mailto:kalenwallin1@gmail.com" target="_blank"
-                        ><img
-                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/mail_dark.svg"
-                            alt="Mail Icon"
-                            height="31"
-                        /></a
-                    >
-                    <a
-                        href="https://www.linkedin.com/in/kalenwallin/"
-                        target="_blank"
-                        ><img
-                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/linkedin_dark.svg"
-                            alt="LinkedIn Icon"
-                            height="31"
-                        /></a
-                    >
-                    <a href="https://github.com/kalenwallin" target="_blank"
-                        ><img
-                            src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/github_dark.svg"
-                            alt="GitHub Icon"
-                            height="31"
-                        /></a
-                    >
+                    <div class="column">
+                        <a href="mailto:kalenwallin1@gmail.com" target="_blank"
+                            ><img
+                                src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/mail_dark.svg"
+                                alt="Mail Icon"
+                                height="31"
+                            /></a
+                        >
+                    </div>
+                    <div class="column">
+                        <a
+                            href="https://www.linkedin.com/in/kalenwallin/"
+                            target="_blank"
+                            ><img
+                                src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/linkedin_dark.svg"
+                                alt="LinkedIn Icon"
+                                height="31"
+                            /></a
+                        >
+                    </div>
+                    <div class="column">
+                        <a href="https://github.com/kalenwallin" target="_blank"
+                            ><img
+                                src="https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/github_dark.svg"
+                                alt="GitHub Icon"
+                                height="31"
+                            /></a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,7 +181,7 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit1400.jpg 1400w"
             <p class="about-p">
                 Here are the tools, frameworks, libraries, and coding languages
                 Kalen has worked with, sorted by the time he last worked with
-                them.
+                them in alphabetical order.
                 <br />
                 <div class="column pcol">
                     <b>Past Year</b>
