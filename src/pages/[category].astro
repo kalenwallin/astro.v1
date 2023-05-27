@@ -166,12 +166,16 @@ const { cards } = Astro.props;
 <style>
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         /* This is better for small screens, once min() is better supported */
         /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
         gap: 1rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: 1rem;
+    }
+    @media (max-width: 425px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
     }
 </style>
 <Base title={category}>
