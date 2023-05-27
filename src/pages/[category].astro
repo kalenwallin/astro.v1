@@ -163,38 +163,22 @@ const { category } = Astro.params;
 const { cards } = Astro.props;
 ---
 
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        /* This is better for small screens, once min() is better supported */
+        /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+        gap: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+</style>
 <Base title={category}>
     <div class="modal-header">
         <h1>{category}</h1>
     </div>
-    {
-        cards
-            .filter((card, index) => index === 0)
-            .map((card) => (
-                <div class="first column animate">
-                    <Card article={card} />
-                </div>
-            ))
-    }
-    {
-        cards
-            .filter((card, index) => index !== 0 && index !== cards.length - 1)
-            .map((card) => (
-                <div class="column animate">
-                    <Card article={card} />
-                </div>
-            ))
-    }
-    {
-        cards
-            .filter(
-                (card, index) =>
-                    index === cards.length - 1 && cards.length - 1 > 0
-            )
-            .map((card) => (
-                <div class="last column animate">
-                    <Card article={card} />
-                </div>
-            ))
-    }
+    <div class="grid">
+        {cards.map((card) => <Card article={card} />)}
+    </div>
 </Base>
