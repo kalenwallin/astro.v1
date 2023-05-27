@@ -547,10 +547,14 @@ img {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(255, 255, 255, 0.8);
         padding: 10px;
         text-align: center;
         transition: top 0.3s;
+    }
+
+    .dark-theme .card .container {
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
     .card:hover .container {
@@ -568,11 +572,13 @@ img {
 
 .container h4 {
     font-size: 100%;
+    text-align: center;
 }
 
 .container p {
     padding: 0px 16px;
     margin: 0;
+    text-align: center;
 }
 
 /* Clear floats after the columns */
