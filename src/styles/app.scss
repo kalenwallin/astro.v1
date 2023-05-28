@@ -541,7 +541,7 @@ img {
         width: 100%;
     }
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
     .card .container {
         position: absolute;
         top: 100%;
