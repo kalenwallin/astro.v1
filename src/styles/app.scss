@@ -870,60 +870,50 @@ iframe {
 }
 
 .nav-social-icons {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
 }
 
-.social a svg {
-    fill: black;
+@media (min-width: 768px) {
+    .nav-social-icons {
+        display: flex;
+    }
 }
 
-.nav-social-icons.social a svg {
+.social a svg {
     fill: #d7d7d7;
 }
 
-:root.dark-theme .social a svg {
-    fill: white;
+.about-icons.social a svg {
+    fill: $dark-grey;
 }
 
-:root.dark-theme .nav-social-icons.social a svg {
+.dark-theme .social a svg {
     fill: $light-grey;
 }
 
 .github:hover {
-    fill: #c9510c !important;
-}
-
-.nav-social-icons .github:hover {
     fill: $teal !important;
 }
 
-.dark-theme .nav-social-icons .github:hover {
+.dark-theme .github:hover {
     fill: $pink !important;
 }
 
 .linkedin:hover {
-    fill: #0077b5 !important;
-}
-
-.nav-social-icons .linkedin:hover {
     fill: $teal !important;
 }
 
-.dark-theme .nav-social-icons .linkedin:hover {
+.dark-theme .linkedin:hover {
     fill: $pink !important;
 }
 
 .mail:hover {
-    fill: #777777 !important;
-}
-
-.nav-social-icons .mail:hover {
     fill: $teal !important;
 }
 
-.dark-theme .nav-social-icons .mail:hover {
+.dark-theme .mail:hover {
     fill: $pink !important;
 }
