@@ -118,11 +118,6 @@ import ThemeToggle from "./ThemeToggle.astro";
             link.href.toLowerCase() === window.location.href.toLowerCase()
         ) {
             link.setAttribute("aria-current", "page");
-            console.log("Nav Link: " + link.href.toLowerCase());
-            console.log("Window Link: " + window.location.href.toLowerCase());
-        } else if (link instanceof HTMLAnchorElement) {
-            console.log("Nav Link: " + link.href.toLowerCase());
-            console.log("Window Link: " + window.location.href.toLowerCase());
         }
     });
 </script>
