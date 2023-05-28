@@ -453,7 +453,7 @@ app {
 
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
-        display: block;
+        display: flex;
     }
 }
 
@@ -859,4 +859,61 @@ iframe {
 
 .skills {
     margin: 0px;
+}
+
+.social a {
+    cursor: pointer;
+    font-size: 2rem;
+    display: inline-flex;
+    padding: 0.25em;
+    transition: color 250ms ease-out;
+}
+
+.nav-social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.social a svg {
+    fill: black;
+    stroke: black;
+    color: black;
+}
+
+.nav-social-icons.social a svg {
+    fill: #d7d7d7;
+    stroke: #d7d7d7;
+    color: #d7d7d7;
+}
+
+:root.dark-theme .social a svg {
+    fill: white;
+    stroke: white;
+    color: white;
+}
+
+:root.dark-theme .nav-social-icons.social a svg {
+    fill: $light-grey;
+    stroke: $light-grey;
+    color: $light-grey;
+}
+
+.github:hover {
+    color: #c9510c !important;
+    fill: #c9510c !important;
+    stroke: #c9510c !important;
+}
+
+.linkedin:hover {
+    color: #0077b5 !important;
+    fill: #0077b5 !important;
+    stroke: #0077b5 !important;
+}
+
+.mail:hover {
+    color: #777777 !important;
+    fill: #777777 !important;
+    stroke: #777777 !important;
 }
