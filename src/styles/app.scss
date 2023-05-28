@@ -597,13 +597,6 @@ img {
     text-align: center;
 }
 
-/* Clear floats after the columns */
-.about-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 /* The Modal (background) */
 .modal {
     display: none;
