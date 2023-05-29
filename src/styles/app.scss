@@ -876,6 +876,11 @@ iframe {
 
 .social a svg {
     fill: #d7d7d7;
+    transition: ease 0.3s;
+}
+
+.social a svg:hover {
+    transition: ease 0.3s;
 }
 
 .about-icons.social a svg {
