@@ -175,20 +175,20 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
             <hr />
             <p class="about-p">
                 Here are the tools, frameworks, libraries, and coding languages
-                Kalen has worked with, sorted by the time he last worked with
-                them in alphabetical order.
+                I've has worked with, sorted by the proficiency in alphabetical
+                order.
                 <br />
                 <div class="column pcol">
-                    <b>Past Year</b>
-                    <div id="recent-skills"></div>
+                    <b>High Proficiency</b>
+                    <div id="high-skills"></div>
                 </div>
                 <div class="column pcol">
-                    <b>1-2 Years Ago</b>
-                    <div id="whileago-skills"></div>
+                    <b>Medium Proficiency</b>
+                    <div id="medium-skills"></div>
                 </div>
                 <div class="column pcol">
-                    <b>3+ Years Ago</b>
-                    <div id="longtimeago-skills"></div>
+                    <b>Low Proficiency</b>
+                    <div id="low-skills"></div>
                 </div>
             </p>
         </div>
@@ -198,47 +198,49 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
         const imgLink =
             "https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/";
 
-        const recent = [
-            "Amazon Web Services",
+        const highProficiencySkills = [
+            "Adobe Express",
             "Astro",
+            "CSS",
+            "Django",
+            "GitHub",
+            "HTML",
+            "JS",
+            "Microsoft Teams",
+            "Python",
+            "Visual Studio/Code",
+        ];
+        const mediumProficiencySkills = [
             "Blazor",
             "C#",
-            "Django",
-            "Figma",
-            "GitHub",
-            "HTML & CSS",
-            "JavaScript",
-            "Microsoft Teams/Office",
-            "Netlify",
-            "NodeJS",
-            "Notion",
-            "Python",
-            "Unity",
-            "Vercel",
-            "Visual Studio",
-            "VS Code",
-        ];
-        const whileAgo = [
-            "C",
-            "C++",
             "CircleCI",
-            "ExpressJS",
+            "Figma",
             "GDScript",
             "Godot",
+            "Notion",
             "PythonAnywhere",
+            "Unity",
+            "Vercel",
         ];
-        const longtimeago = [
+        const lowProficiencySkills = [
+            ".NET Core",
+            "Amazon Web Services",
             "ANTLR",
-            "ASP.NET Core",
+            "C",
+            "C++",
             "Dart",
             "Eclipse",
+            "ExpressJS",
             "Flutter",
             "Haskell",
             "Java",
             "MySQL Workbench",
+            "Netlify",
+            "Next.js",
+            "NodeJS",
             "Prolog",
             "SQL",
-            "Xamarin",
+            "XAML",
         ];
 
         function generateSkillsList(skills: any[]) {
@@ -248,23 +250,25 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            const recentSkillsList = document.getElementById("recent-skills");
-            const whileAgoSkillsList =
-                document.getElementById("whileago-skills");
-            const longtimeagoSkillsList =
-                document.getElementById("longtimeago-skills");
+            const highProficiency = document.getElementById("high-skills");
+            const mediumProficiency = document.getElementById("medium-skills");
+            const lowProficiency = document.getElementById("low-skills");
 
-            if (recentSkillsList) {
-                recentSkillsList.innerHTML = generateSkillsList(recent);
+            if (highProficiency) {
+                highProficiency.innerHTML = generateSkillsList(
+                    highProficiencySkills
+                );
             }
 
-            if (whileAgoSkillsList) {
-                whileAgoSkillsList.innerHTML = generateSkillsList(whileAgo);
+            if (mediumProficiency) {
+                mediumProficiency.innerHTML = generateSkillsList(
+                    mediumProficiencySkills
+                );
             }
 
-            if (longtimeagoSkillsList) {
-                longtimeagoSkillsList.innerHTML =
-                    generateSkillsList(longtimeago);
+            if (lowProficiency) {
+                lowProficiency.innerHTML =
+                    generateSkillsList(lowProficiencySkills);
             }
         });
     </script>
