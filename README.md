@@ -1,20 +1,10 @@
-# Astro Starter Kit: Minimal
-
-```
-npm create astro@latest -- --template minimal
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+# Astro.v1
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/94048ce9-2abf-440a-bf8e-4ebf71d525f0/deploy-status)](https://app.netlify.com/sites/astrov1/deploys)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of the Astro project, you'll see the following folders and files:
 
 ```
 /
@@ -29,7 +19,7 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Any static assets, like images, are placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -46,4 +36,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check the [Astro documentation](https://docs.astro.build) or jump into their [Astro Discord server](https://astro.build/chat).
