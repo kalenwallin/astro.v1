@@ -220,6 +220,6 @@ const { cards } = Astro.props;
         <h1>{category}</h1>
     </div>
     <div class="grid">
-        {cards.map((card) => <Card article={card} />)}
+        {cards.map((card: any) => <Card article={card} />)}
     </div>
 </Base>
