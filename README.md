@@ -37,3 +37,13 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check the [Astro documentation](https://docs.astro.build) or jump into their [Astro Discord server](https://astro.build/chat).
+
+## Want to contribute?
+
+### Post
+`imgURL` should link to the cover image of a post with aspect ratio: 16:9 (typically width:1364 and height:768)
+`alt` should contain a description of the cover img
+`title` should contain the Post title
+`description` should contain the Post description
+`id` increment from previous highest
+`pageUrl` should contain the embed link to the post content
