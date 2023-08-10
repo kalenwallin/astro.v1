@@ -39,12 +39,15 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
 ---
 
 <style>
-    b {
-        color: #355c7d;
+    b,
+    h2 {
+        color: var(--blue-text);
     }
-    :root.dark-theme b {
-        color: #ce9bb1;
+    :root.dark-theme b,
+    :root.dark-theme h2 {
+        color: var(--pink-text);
     }
+
     @media (max-width: 767px) {
         .pcol {
             padding-left: 0rem;
@@ -96,7 +99,7 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
 
     <div class="about-row">
         <div class="about-column">
-            <p><b class="about-p">Bibliography</b></p>
+            <h2 class="about-p">Bibliography</h2>
             <hr />
             <p class="about-p">
                 {about1}
@@ -129,33 +132,56 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
     </div>
     <div class="about-row">
         <div class="about-column" style="width:100%">
-            <p><b class="about-p">Skills</b></p>
+            <h2 class="about-p">Skills</h2>
             <hr />
             <p class="about-p">
                 Here are the tools, frameworks, libraries, and coding languages
                 I've has worked with, sorted by the proficiency in alphabetical
                 order.
                 <br />
-                <div class="column pcol">
-                    <b>High Proficiency</b>
-                    <div id="high-skills"></div>
-                </div>
-                <div class="column pcol">
-                    <b>Medium Proficiency</b>
-                    <div id="medium-skills"></div>
-                </div>
-                <div class="column pcol">
-                    <b>Low Proficiency</b>
-                    <div id="low-skills"></div>
-                </div>
+                <style>
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                        margin-left: -1rem;
+                    }
+
+                    th {
+                        padding: 15px 0px;
+                        vertical-align: top;
+                        border-bottom: 1px solid #ddd;
+                        margin-left: -1rem;
+                        color: var(--blue-text);
+                    }
+
+                    :root.dark-theme th {
+                        border-bottom: 1px solid #646464;
+                        color: var(--pink-text);
+                    }
+
+                    td {
+                        padding: 15px 0px;
+                        vertical-align: top;
+                    }
+                </style>
+                <table>
+                    <tr>
+                        <th>High Proficiency Skills</th>
+                        <th>Medium Proficiency Skills</th>
+                        <th>Low Proficiency Skills</th>
+                    </tr>
+
+                    <tr>
+                        <td id="high-skills"></td>
+                        <td id="medium-skills"></td>
+                        <td id="low-skills"></td>
+                    </tr>
+                </table>
             </p>
         </div>
     </div>
     <br />
     <script>
-        const imgLink =
-            "https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/";
-
         const highProficiencySkills = [
             "Adobe Express",
             "Astro",
@@ -203,9 +229,69 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
             "XAML",
         ];
 
+        const iconMapper = {
+            "Adobe Express":
+                '<img src="https://img.shields.io/badge/-Adobe%20Express-blue?logo=adobe&logoColor=white&style=flat">',
+            Astro: '<img src="https://img.shields.io/badge/-Astro-orange?logo=astro&logoColor=white&style=flat">',
+            CSS: '<img src="https://img.shields.io/badge/-CSS-blue?logo=css3&logoColor=white&style=flat">',
+            Django: '<img src="https://img.shields.io/badge/-Django-green?logo=django&logoColor=white&style=flat">',
+            GitHub: '<img src="https://img.shields.io/badge/-GitHub-black?logo=github&logoColor=white&style=flat">',
+            HTML: '<img src="https://img.shields.io/badge/-HTML-red?logo=html5&logoColor=white&style=flat">',
+            JavaScript:
+                '<img src="https://img.shields.io/badge/-JavaScript-yellow?logo=javascript&logoColor=white&style=flat">',
+            "Microsoft Teams":
+                '<img src="https://img.shields.io/badge/-Microsoft%20Teams-purple?logo=microsoft-teams&logoColor=white&style=flat">',
+            Notion: '<img src="https://img.shields.io/badge/-Notion-black?logo=notion&logoColor=white&style=flat">',
+            Python: '<img src="https://img.shields.io/badge/-Python-blue?logo=python&logoColor=white&style=flat">',
+            "Visual Studio/Code":
+                '<img src="https://img.shields.io/badge/-Visual%20Studio-blue?logo=visual-studio&logoColor=white&style=flat">',
+            Blazor: '<img src="https://img.shields.io/badge/-Blazor-purple?logo=blazor&logoColor=white&style=flat">',
+            "C#": '<img src="https://img.shields.io/badge/-C%23-blue?logo=c-sharp&logoColor=white&style=flat">',
+            CircleCI:
+                '<img src="https://img.shields.io/badge/-CircleCI-blue?logo=circleci&logoColor=white&style=flat">',
+            Figma: '<img src="https://img.shields.io/badge/-Figma-purple?logo=figma&logoColor=white&style=flat">',
+            GDScript:
+                '<img src="https://img.shields.io/badge/-GDScript-222222?logo=godot-engine&logoColor=white&style=flat">',
+            Godot: '<img src="https://img.shields.io/badge/-Godot-black?logo=godot-engine&logoColor=white&style=flat">',
+            PythonAnywhere:
+                '<img src="https://img.shields.io/badge/-PythonAnywhere-yellow?logo=python&logoColor=white&style=flat">',
+            Unity: '<img src="https://img.shields.io/badge/-Unity-black?logo=unity&logoColor=white&style=flat">',
+            Vercel: '<img src="https://img.shields.io/badge/-Vercel-black?logo=vercel&logoColor=white&style=flat">',
+            ".NET Core":
+                '<img src="https://img.shields.io/badge/-.NET%20Core-blue?logo=.net&logoColor=white&style=flat">',
+            "Amazon Web Services":
+                '<img src="https://img.shields.io/badge/-Amazon%20Web%20Services-orange?logo=amazon-aws&logoColor=white&style=flat">',
+            ANTLR: '<img src="https://img.shields.io/badge/-ANTLR-222222?logo=antlr&logoColor=white&style=flat">',
+            C: '<img src="https://img.shields.io/badge/-C-blue?logo=c&logoColor=white&style=flat">',
+            "C++": '<img src="https://img.shields.io/badge/-C++-blue?logo=c%2B%2B&logoColor=white&style=flat">',
+            Dart: '<img src="https://img.shields.io/badge/-Dart-blue?logo=dart&logoColor=white&style=flat">',
+            Eclipse:
+                '<img src="https://img.shields.io/badge/-Eclipse-purple?logo=eclipse&logoColor=white&style=flat">',
+            ExpressJS:
+                '<img src="https://img.shields.io/badge/-ExpressJS-darkgreen?logo=express&logoColor=white&style=flat">',
+            Flutter:
+                '<img src="https://img.shields.io/badge/-Flutter-blue?logo=flutter&logoColor=white&style=flat">',
+            "Google Cloud":
+                '<img src="https://img.shields.io/badge/-Google%20Cloud-blue?logo=google-cloud&logoColor=white&style=flat">',
+            Haskell:
+                '<img src="https://img.shields.io/badge/-Haskell-violet?logo=haskell&logoColor=white&style=flat">',
+            Java: '<img src="https://img.shields.io/badge/-Java-red?logo=java&logoColor=white&style=flat">',
+            "MySQL Workbench":
+                '<img src="https://img.shields.io/badge/-MySQL%20Workbench-blue?logo=mysql&logoColor=white&style=flat">',
+            Netlify:
+                '<img src="https://img.shields.io/badge/-Netlify-blue?logo=netlify&logoColor=white&style=flat">',
+            "Next.js":
+                '<img src="https://img.shields.io/badge/-Next.js-black?logo=next.js&logoColor=white&style=flat">',
+            NodeJS: '<img src="https://img.shields.io/badge/-NodeJS-green?logo=node.js&logoColor=white&style=flat">',
+            Prolog: '<img src="https://img.shields.io/badge/-Prolog-222222?logo=probot&logoColor=white&style=flat">',
+            SQL: '<img src="https://img.shields.io/badge/-SQL-336791?logo=mysql&logoColor=white&style=flat">',
+            TypeScript:
+                '<img src="https://img.shields.io/badge/-TypeScript-blue?logo=typescript&logoColor=white&style=flat">',
+            XAML: '<img src="https://img.shields.io/badge/-XAML-blue?logo=xaml&logoColor=white&style=flat">',
+        };
         function generateSkillsList(skills: any[]) {
             return skills
-                .map((skill) => `<p class="skills">${skill}</p>`)
+                .map((skill) => `<p class="skills">${iconMapper[skill]}</p>`)
                 .join("");
         }
 
