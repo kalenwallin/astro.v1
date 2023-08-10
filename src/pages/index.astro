@@ -10,7 +10,7 @@ const about1 = `I am a computer programmer hailing from Imperial, Nebraska.
 
 const about2 = `I fell in love with programming back in my elementary school days. 
                 Prompted by my curiosity about video game creation and website development, 
-                I dived into an online HTML and CSS course on Codecademy. 
+                I dived into online courses on Codecademy. 
                 This early interest in web and game development stayed with me through 
                 junior high and high school, increasing in depth when I started studying at UNL. 
                 My time here was marked by a profound exploration into the intricate aspects of 
@@ -48,6 +48,34 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
         color: var(--pink-text);
     }
 
+    .about-column hr {
+        margin-left: -1rem;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-left: -1rem;
+    }
+
+    th {
+        padding: 15px 0px;
+        vertical-align: top;
+        border-bottom: 1px solid #ddd;
+        margin-left: -1rem;
+        color: var(--blue-text);
+    }
+
+    :root.dark-theme th {
+        border-bottom: 1px solid #646464;
+        color: var(--pink-text);
+    }
+
+    td {
+        padding: 15px 0px;
+        vertical-align: top;
+    }
+
     @media (max-width: 767px) {
         .pcol {
             padding-left: 0rem;
@@ -61,9 +89,11 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
             max-height: 75vh;
             margin: auto;
         }
-    }
-    .about-column hr {
-        margin-left: -1rem;
+        .about-column hr,
+        th,
+        table {
+            margin-left: 0rem;
+        }
     }
 
     .pcol hr {
@@ -139,31 +169,6 @@ https://i.kalenwallin.com/file/portfoliov2/sharex/suit461.jpg 461w,`;
                 I've has worked with, sorted by the proficiency in alphabetical
                 order.
                 <br />
-                <style>
-                    table {
-                        border-collapse: collapse;
-                        width: 100%;
-                        margin-left: -1rem;
-                    }
-
-                    th {
-                        padding: 15px 0px;
-                        vertical-align: top;
-                        border-bottom: 1px solid #ddd;
-                        margin-left: -1rem;
-                        color: var(--blue-text);
-                    }
-
-                    :root.dark-theme th {
-                        border-bottom: 1px solid #646464;
-                        color: var(--pink-text);
-                    }
-
-                    td {
-                        padding: 15px 0px;
-                        vertical-align: top;
-                    }
-                </style>
                 <table>
                     <tr>
                         <th>High Proficiency Skills</th>
