@@ -1,7 +1,7 @@
 {
     "name": "astro.v1",
     "type": "module",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@astrojs/netlify": "^2.2.2",
-        "astro": "^2.4.2",
+        "astro": "2.9",
         "sass": "^1.62.1"
     }
 }
