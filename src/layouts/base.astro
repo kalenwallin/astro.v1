@@ -1,7 +1,6 @@
 ---
 import "../styles/app.scss";
 import NavMenu from "../components/NavMenu.astro";
-import { ViewTransitions } from "astro:transitions";
 
 const { title } = Astro.props;
 ---
@@ -41,6 +40,8 @@ const { title } = Astro.props;
 
         <base href="/" />
 
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
         <script is:inline>
             // This code is inlined in the head to make dark mode instant & blocking.
             const getThemePreference = () => {
@@ -73,8 +74,6 @@ const { title } = Astro.props;
                     attributeFilter: ["class"],
                 });
             }
-
-            <ViewTransitions />;
         </script>
     </head>
     <body>
