@@ -13,5 +13,8 @@
         "@astrojs/netlify": "^2.2.2",
         "astro": "~2.10.14",
         "sass": "^1.62.1"
+    },
+    "devDependencies": {
+        "@types/jquery": "^3.5.17"
     }
 }

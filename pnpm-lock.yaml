@@ -3,11 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/netlify': ^2.2.2
   astro: ~2.10.14
+  jquery: ^3.7.0
   sass: ^1.62.1
 
 dependencies:
   '@astrojs/netlify': 2.6.0_astro@2.10.14
   astro: 2.10.14_sass@1.66.1
+  jquery: 3.7.0
   sass: 1.66.1
 
 packages:
@@ -2099,6 +2101,10 @@ packages:
 
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
+    dev: false
+
+  /jquery/3.7.0:
+    resolution: {integrity: sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ==}
     dev: false
 
   /js-tokens/4.0.0:
