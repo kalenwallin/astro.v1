@@ -13,6 +13,7 @@ $teal: #355c7d;
 :root {
     --blue-text: #355c7d;
     --pink-text: #ce9bb1;
+    $border: #fff;
 }
 
 :root {
@@ -41,6 +42,7 @@ body {
 /*dark-theme start*/
 :root.dark-theme {
     color-scheme: dark;
+    $border: #000;
 }
 
 :root.dark-theme .stats-col.dark {
@@ -616,6 +618,12 @@ img {
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
     transition: ease 0.3s;
+    rect {
+        stroke: #fff;
+        stroke-width: 2px;
+        stroke-dasharray: 778;
+        stroke-dashoffset: 778;
+    }
 }
 
 /* Modal Content/Box */
@@ -649,11 +657,11 @@ img {
     cursor: pointer;
 }
 
-.fappy_container {
+.happy_container {
     height: 100%;
 }
 
-.fappy_h1 {
+.happy_h1 {
     margin: 0 auto;
 }
 
