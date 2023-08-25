@@ -1,7 +1,6 @@
 ---
 import "../styles/app.scss";
 import NavMenu from "../components/NavMenu.astro";
-import { ViewTransitions } from "astro:transitions";
 
 const { title } = Astro.props;
 ---
@@ -14,10 +13,7 @@ const { title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title} | Kalen Wallin</title>
         <meta charset="utf-8" />
-        <meta
-            name="description"
-            content="Projects I've worked on."
-        />
+        <meta name="description" content="Projects I've worked on." />
 
         <!-- favicon -->
         <link
@@ -76,8 +72,6 @@ const { title } = Astro.props;
                     attributeFilter: ["class"],
                 });
             }
-            
-            <ViewTransitions />
         </script>
     </head>
     <body>
