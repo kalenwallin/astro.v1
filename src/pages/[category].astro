@@ -8,7 +8,7 @@ export function getStaticPaths() {
     const pageLink = "https://v3.kalenwallin.com/";
     const pages = [
         {
-            category: "Websites",
+            category: "websites",
             cards: [
                 {
                     imgUrl: `${imgLink}astro.jpeg`,
@@ -58,7 +58,7 @@ export function getStaticPaths() {
             ],
         },
         {
-            category: "Video Games",
+            category: "video games",
             cards: [
                 {
                     imgUrl: `${imgLink}baldorf.png`,
@@ -90,7 +90,7 @@ export function getStaticPaths() {
             ],
         },
         {
-            category: "Mobile Apps",
+            category: "mobile apps",
             cards: [
                 {
                     imgUrl: `${imgLink}lifting_calculator.png`,
@@ -104,7 +104,7 @@ export function getStaticPaths() {
             ],
         },
         {
-            category: "Work",
+            category: "work",
             cards: [
                 {
                     imgUrl: `${imgLink}auto_corn_ticket.png`,
@@ -154,7 +154,7 @@ export function getStaticPaths() {
             ],
         },
         {
-            category: "Documents",
+            category: "documents",
             cards: [
                 {
                     imgUrl: `${imgLink}resume.png`,
@@ -205,6 +205,12 @@ export function getStaticPaths() {
         },
     ];
 
+    function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+    }
+
     return pages.map((page) => {
         let cards = page.cards;
 
@@ -212,13 +218,13 @@ export function getStaticPaths() {
             params: {
                 category: page.category,
             },
-            props: { cards },
+            props: { cards, categorycap: toTitleCase(page.category) },
         };
     });
 }
 
 const { category } = Astro.params;
-const { cards } = Astro.props;
+const { cards, categorycap } = Astro.props;
 ---
 
 <style>
@@ -237,9 +243,9 @@ const { cards } = Astro.props;
         }
     }
 </style>
-<Base title={category}>
+<Base title={categorycap}>
     <div class="modal-header">
-        <h1>{category}</h1>
+        <h1 style="text-transform:capitalize;">{category}</h1>
     </div>
     <div class="grid">
         {cards.map((card: any) => <Card article={card} />)}
