@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/"
+  to = "/websites/"
+  status = 301
+  force = true
+  query = {path = ":path"}
