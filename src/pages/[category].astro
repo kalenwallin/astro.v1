@@ -225,6 +225,8 @@ export function getStaticPaths() {
 
 const { category } = Astro.params;
 const { cards, categorycap } = Astro.props;
+
+export const prerender = true;
 ---
 
 <style>
