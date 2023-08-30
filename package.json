@@ -14,7 +14,6 @@
         "@astrojs/vercel": "^3.8.2",
         "@types/react": "^18.2.21",
         "@types/react-dom": "^18.2.7",
-        "@vercel/analytics": "^1.0.2",
         "astro": "~2.10.14",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
