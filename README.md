@@ -1,7 +1,5 @@
 # Astro.v1
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/94048ce9-2abf-440a-bf8e-4ebf71d525f0/deploy-status)](https://app.netlify.com/sites/astrov1/deploys)
-
 ## Want to contribute?
 
 ### Add a Post
