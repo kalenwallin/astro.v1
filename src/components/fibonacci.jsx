@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 const FibonacciComponent = () => {
   const [answer, setAnswer] = useState("");
+  const [result, setResult] = useState(null); // New state variable
 
   const fibonacci = (n) => {
     const phi = (1 + Math.sqrt(5)) / 2;
@@ -8,23 +9,21 @@ const FibonacciComponent = () => {
   };
 
   const handleInputChange = (event) => {
-    setAnswer(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let num = Number(answer);
-    const result = fibonacci(num);
-    console.log(`The Fibonacci number for ${num} is ${result}`);
+    const inputNum = Number(event.target.value);
+    setAnswer(inputNum.toString()); // Update the answer state variable
+    const fibResult = fibonacci(inputNum);
+    setResult(fibResult); // Update the result state variable
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <label>
         Enter a number:
         <input type="number" value={answer} onChange={handleInputChange} />
       </label>
-      <button type="submit">Calculate</button>
+      {result !== null && ( // Render the result if it's not null
+        <p>The Fibonacci number for {Number(answer)} is {result}</p>
+      )}
     </form>
   );
 };
