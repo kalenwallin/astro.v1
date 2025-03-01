@@ -36,7 +36,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 </style>
 <div class="sidebar" id="sidebar" slot="sidebar">
     <div class="top-row pl-4 navbar navbar-dark">
-        <a class="navbar-brand" href="/">Kalen Wallin</a>
+        <a class="navbar-brand" href="/career experience/">Kalen Wallin</a>
         <button class="navbar-toggler" id="navbar-toggler">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -132,34 +132,35 @@ import ThemeToggle from "./ThemeToggle.astro";
     </div>
 </div>
 <script>
-    let collapseNavMenu = true;
-    const navMenuToggler = document.getElementById("navbar-toggler");
-    const navMenu = document.getElementById("nav-menu");
+    document.addEventListener('astro:page-load', () => {
+        let collapseNavMenu = true;
+        const navMenuToggler = document.getElementById("navbar-toggler");
+        const navMenu = document.getElementById("nav-menu");
 
-    if (navMenuToggler && navMenu) {
-        navMenuToggler.addEventListener("click", ToggleNavMenu);
-        navMenu.addEventListener("click", ToggleNavMenu);
-    }
+        if (navMenuToggler && navMenu) {
+            navMenuToggler.addEventListener("click", ToggleNavMenu);
+            navMenu.addEventListener("click", ToggleNavMenu);
+        }
 
-    function ToggleNavMenu() {
-        collapseNavMenu = !collapseNavMenu;
-        const updatedNavMenuCssClass = collapseNavMenu ? "collapse" : null;
+        function ToggleNavMenu() {
+            collapseNavMenu = !collapseNavMenu;
+            const updatedNavMenuCssClass = collapseNavMenu ? "collapse" : null;
 
-        if (navMenu) {
-            if (updatedNavMenuCssClass) {
-                navMenu.classList.add("collapse");
-            } else {
-                navMenu.classList.remove("collapse");
+            if (navMenu) {
+                if (updatedNavMenuCssClass) {
+                    navMenu.classList.add("collapse");
+                } else {
+                    navMenu.classList.remove("collapse");
+                }
             }
         }
-    }
-
-    document.querySelectorAll(".nav-link").forEach((link) => {
-        if (
-            link instanceof HTMLAnchorElement &&
-            link.href.toLowerCase() === window.location.href.toLowerCase()
-        ) {
-            link.setAttribute("aria-current", "page");
-        }
+        document.querySelectorAll(".nav-link").forEach((link) => {
+            if (
+                link instanceof HTMLAnchorElement &&
+                link.href.toLowerCase() === window.location.href.toLowerCase()
+            ) {
+                link.setAttribute("aria-current", "page");
+            }
+        });
     });
 </script>

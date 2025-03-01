@@ -33,14 +33,16 @@ const cardID = `card-${article.id}`;
 </div>
 
 <script>
-    const cards = document.querySelectorAll<HTMLElement>(".card");
-    const modals = document.querySelectorAll<HTMLElement>(".modal");
-    cards.forEach((card, i) => {
-        card.addEventListener("click", () => {
-            modals[i].style.display = "block";
-        });
-        modals[i].addEventListener("click", () => {
-            modals[i].style.display = "none";
+    document.addEventListener('astro:page-load', () => {
+        const cards = document.querySelectorAll<HTMLElement>(".card");
+        const modals = document.querySelectorAll<HTMLElement>(".modal");
+        cards.forEach((card, i) => {
+            card.addEventListener("click", () => {
+                modals[i].style.display = "block";
+            });
+            modals[i].addEventListener("click", () => {
+                modals[i].style.display = "none";
+            });
         });
     });
 </script>

@@ -236,7 +236,7 @@ app {
     justify-content: flex-end;
 }
 
-.main .top-row > a,
+.main .top-row>a,
 .main .top-row .btn-link {
     white-space: nowrap;
     margin-left: 1.5rem;
@@ -255,6 +255,11 @@ app {
 .sidebar {
     background-image: linear-gradient(#355c7d, #6c5b7b, #c06c84);
     transition: ease 0.3s;
+}
+
+.sidebar .collapse {
+    /* Never collapse the sidebar for wide screens */
+    display: none !important;
 }
 
 .sidebar .top-row {
@@ -450,7 +455,7 @@ app {
 
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
-        display: flex;
+        display: flex !important;
     }
 }
 
@@ -521,6 +526,7 @@ img {
 }
 
 @media screen and (max-width: 1152px) {
+
     .pcol,
     .column {
         width: 50%;
@@ -554,6 +560,7 @@ img {
         width: 100%;
     }
 }
+
 @media (hover: hover) and (pointer: fine) {
     .card .container {
         position: absolute;
@@ -707,6 +714,7 @@ img {
 /*iPad Pro 11" 3rd gen*/
 /* Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+
     /* Toggle Button */
     .dark-theme-toggle {
         margin-top: -25.5px;
@@ -715,6 +723,7 @@ img {
 
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+
     /* Toggle Button */
     .dark-theme-toggle {
         margin-top: -25.5px;
@@ -918,6 +927,7 @@ iframe {
 
 // If the user prefers reduced motion, turn off all animations
 @media (prefers-reduced-motion: reduce) {
+
     *,
     ::before,
     ::after {
