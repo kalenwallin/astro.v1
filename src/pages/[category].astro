@@ -3,233 +3,253 @@ import Base from "../layouts/base.astro";
 import Card from "../components/Card.astro";
 
 export function getStaticPaths() {
-    const imgLink =
-        "https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/";
-    const pageLink = "https://v3.kalenwallin.com/";
-    const pages = [
+  const imgLink =
+    "https://raw.githubusercontent.com/kalenwallin/portfolio.v1/gpages/img/";
+  const pageLink = "https://v3.kalenwallin.com/";
+  const pages = [
+    {
+      category: "career experience",
+      cards: [
         {
-            category: "career experience",
-            cards: [
-                {
-                    imgUrl: `${imgLink}sandhills.png`,
-                    alt: "Graphic of the Sandhills Global logo with the text Sand and Global in grey and hills in dark blue on a greyish blue background.",
-                    title: "Sandhills Global",
-                    description: "ASP.NET Web Developer",
-                    id: "8",
-                    pageUrl: `${pageLink}sandhills`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}wallinfarms.png`,
-                    alt: "Wallin Farms Logo with four wheat heads stacked on top of each other on a black background and the text Wallin in white and Farms in yellow all capitalized.",
-                    title: "Wallin Farms",
-                    description: "Software Engineer",
-                    id: "6",
-                    pageUrl: `${pageLink}wallin-farms`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}mrp_Internship.png`,
-                    alt: "A graphics that shows MRP's logo in white on a dark blue background.",
-                    title: "MRP Internship",
-                    description: "Graphic Designer",
-                    id: "7",
-                    pageUrl: `${pageLink}mrp`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}farmafield.png`,
-                    alt: "FarmAfield internship graphic",
-                    title: "FarmAfield",
-                    description: "Django Web Developer Intern",
-                    id: "1",
-                    pageUrl: `${pageLink}faf`,
-                    date: "2021",
-                },
-                {
-                    imgUrl: `${imgLink}unl_ta.png`,
-                    alt: "University of Nebraska-Lincoln Software Engineering Teaching Assistant graphic",
-                    title: "University of Nebraska-Lincoln",
-                    description: "Software Engineering Teaching Assistant",
-                    id: "2",
-                    pageUrl: `${pageLink}unl-ta`,
-                    date: "2021",
-                },
-                {
-                    imgUrl: `${imgLink}imperial_pool.png`,
-                    alt: "Imperial Pool Logo",
-                    title: "Imperial Pool",
-                    description: "Lifeguard",
-                    id: "5",
-                    pageUrl: `${pageLink}lifeguard`,
-                    date: "2017",
-                },
-            ],
+          imgUrl: `${imgLink}sandhills.png`,
+          alt: "Graphic of the Sandhills Global logo with the text Sand and Global in grey and hills in dark blue on a greyish blue background.",
+          title: "Sandhills Global",
+          description: "ASP.NET Web Developer",
+          id: "8",
+          pageUrl: `${pageLink}sandhills`,
+          date: "2023",
         },
         {
-            category: "websites",
-            cards: [
-                {
-                    imgUrl: `${imgLink}astro.jpeg`,
-                    alt: "Astro web framework logo",
-                    title: "Astro.v1",
-                    description: "Rewrite of 1st Portfolio (Astro)",
-                    id: "6",
-                    pageUrl: `${pageLink}i-rewrote-my-first-portfolio-in-astro`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}portfoliov3.png`,
-                    alt: "A graphic of a white k with rounded edges on a solid purple background",
-                    title: "Portfolio.v3",
-                    description: "3rd Dev Portfolio (Next.js)",
-                    id: "1",
-                    pageUrl: `${pageLink}portfoliov3-development`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}portfoliov2.png`,
-                    alt: "Portfolio version 2 Logo",
-                    title: "Portfolio.v2",
-                    description: "2nd Dev Portfolio (Django)",
-                    id: "2",
-                    pageUrl: `${pageLink}portfoliov2`,
-                    date: "2022",
-                },
-                {
-                    imgUrl: `${imgLink}portfoliov12.png`,
-                    alt: "Portfolio version 1 Logo",
-                    title: "Portfolio.v1",
-                    description: "1st Dev Portfolio (Blazor)",
-                    id: "3",
-                    pageUrl: `${pageLink}portfoliov1`,
-                    date: "2021",
-                },
-                {
-                    imgUrl: `${imgLink}voting_system.png`,
-                    alt: "Voting System Logo",
-                    title: "Voting System",
-                    description: "Political Voting Website (.NET)",
-                    id: "4",
-                    pageUrl: `${pageLink}voting-system`,
-                    date: "2021",
-                },
-            ],
+          imgUrl: `${imgLink}mrp_Internship.png`,
+          alt: "A graphics that shows MRP's logo in white on a dark blue background.",
+          title: "MRP Internship",
+          description: "Graphic Designer",
+          id: "7",
+          pageUrl: `${pageLink}mrp`,
+          date: "2023",
         },
         {
-            category: "video games",
-            cards: [
-                {
-                    imgUrl: `${imgLink}baldorf.png`,
-                    alt: "baldorf graphic",
-                    title: "baldorf",
-                    description: "Unity Game Developer",
-                    id: "1",
-                    pageUrl: `${pageLink}baldorf`,
-                    date: "2022",
-                },
-                {
-                    imgUrl: `${imgLink}godot_demo.png`,
-                    alt: "godot demo graphic",
-                    title: "Godot Demo",
-                    description: "Godot Game Developer",
-                    id: "2",
-                    pageUrl: `${pageLink}godot-game-level-demo`,
-                    date: "2022",
-                },
-                {
-                    imgUrl: `${imgLink}minieval.png`,
-                    alt: "Minieval Logo",
-                    title: "Minieval",
-                    description: "Godot Game Developer",
-                    id: "3",
-                    pageUrl: `${pageLink}minieval`,
-                    date: "2021",
-                },
-            ],
+          imgUrl: `${imgLink}farmafield.png`,
+          alt: "FarmAfield internship graphic",
+          title: "FarmAfield",
+          description: "Django Web Developer Intern",
+          id: "1",
+          pageUrl: `${pageLink}faf`,
+          date: "2021",
         },
         {
-            category: "mobile apps",
-            cards: [
-                {
-                    imgUrl: `${imgLink}lifting_calculator.png`,
-                    alt: "Weight Lifting Calculator Screenshot",
-                    title: "Weight Lifting Calculator",
-                    description: "Xamarin Mobile Developer",
-                    id: "1",
-                    pageUrl: `${pageLink}weight-lifting-calculator`,
-                    date: "2020",
-                },
-            ],
+          imgUrl: `${imgLink}unl_ta.png`,
+          alt: "University of Nebraska-Lincoln Software Engineering Teaching Assistant graphic",
+          title: "University of Nebraska-Lincoln",
+          description: "Software Engineering Teaching Assistant",
+          id: "2",
+          pageUrl: `${pageLink}unl-ta`,
+          date: "2021",
         },
         {
-            category: "documents",
-            cards: [
-                {
-                    imgUrl: `${imgLink}resume.png`,
-                    alt: "Resume graphic",
-                    title: "Resume",
-                    description: "General Purpose",
-                    id: "1",
-                    pageUrl: `https://v1.kalenwallin.com/Documents/Resume.pdf`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}ThesisCover.jpg`,
-                    alt: "Honors Thesis Cover Graphic",
-                    title: "Honors Thesis",
-                    description: "University of Nebraska-Lincoln (UNL)",
-                    id: "2",
-                    pageUrl: `${pageLink}undergrad-honors-thesis`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}unl_transcript.png`,
-                    alt: "University of Nebraska-Lincoln transcript graphic",
-                    title: "BA Computer Science",
-                    description: "University of Nebraska-Lincoln (UNL)",
-                    id: "3",
-                    pageUrl: `https://v1.kalenwallin.com/Documents/unl_transcript.pdf`,
-                    date: "2023",
-                },
-                {
-                    imgUrl: `${imgLink}ru_transcript.png`,
-                    alt: "Reykjavík University graphic",
-                    title: "Exchange Studies",
-                    description: "Reykjavík University (RU)",
-                    id: "4",
-                    pageUrl: `https://v1.kalenwallin.com/Documents/ru_transcript.pdf`,
-                    date: "2022",
-                },
-                {
-                    imgUrl: `${imgLink}cchs_transcript.png`,
-                    alt: "CCHS Transcript graphic",
-                    title: "High School",
-                    description: "Chase County High School (CCHS)",
-                    id: "5",
-                    pageUrl: `https://v1.kalenwallin.com/Documents/cchstranscript.pdf`,
-                    date: "2019",
-                },
-            ],
+          imgUrl: `${imgLink}imperial_pool.png`,
+          alt: "Imperial Pool Logo",
+          title: "Imperial Pool",
+          description: "Lifeguard",
+          id: "5",
+          pageUrl: `${pageLink}lifeguard`,
+          date: "2017",
         },
-    ];
+      ],
+    },
+    {
+      category: "websites",
+      cards: [
+        {
+          imgUrl: `${imgLink}nci.png`,
+          alt: "NCI Field Report Cover Art",
+          title: "NCI Field Report",
+          description:
+            "A report management website for Field Scouts. (Next.js)",
+          id: "9",
+          pageUrl: `${pageLink}nci-field-report`,
+          date: "2025",
+        },
+        {
+          imgUrl: `${imgLink}cropcache.png`,
+          alt: "CropCache Logo",
+          title: "CropCache",
+          description:
+            "A crop inventory management website for Farmers. Syncs with SnapScale.",
+          id: "8",
+          pageUrl: `${pageLink}cropcache`,
+          date: "2025",
+        },
+        {
+          imgUrl: `${imgLink}snapscale.png`,
+          alt: "SnapScale Logo",
+          title: "SnapScale",
+          description: "Turn scale tickets into Excel reports in a snap!",
+          id: "7",
+          pageUrl: `${pageLink}snapscale`,
+          date: "2023",
+        },
+        {
+          imgUrl: `${imgLink}astro.jpeg`,
+          alt: "Astro web framework logo",
+          title: "Astro.v1",
+          description: "Rewrite of 1st Portfolio (Astro)",
+          id: "6",
+          pageUrl: `${pageLink}i-rewrote-my-first-portfolio-in-astro`,
+          date: "2023",
+        },
+        {
+          imgUrl: `${imgLink}portfoliov3.png`,
+          alt: "A graphic of a white k with rounded edges on a solid purple background",
+          title: "Portfolio.v3",
+          description: "3rd Dev Portfolio (Next.js)",
+          id: "1",
+          pageUrl: `${pageLink}portfoliov3-development`,
+          date: "2023",
+        },
+        {
+          imgUrl: `${imgLink}portfoliov2.png`,
+          alt: "Portfolio version 2 Logo",
+          title: "Portfolio.v2",
+          description: "2nd Dev Portfolio (Django)",
+          id: "2",
+          pageUrl: `${pageLink}portfoliov2`,
+          date: "2022",
+        },
+        {
+          imgUrl: `${imgLink}portfoliov12.png`,
+          alt: "Portfolio version 1 Logo",
+          title: "Portfolio.v1",
+          description: "1st Dev Portfolio (Blazor)",
+          id: "3",
+          pageUrl: `${pageLink}portfoliov1`,
+          date: "2021",
+        },
+        {
+          imgUrl: `${imgLink}voting_system.png`,
+          alt: "Voting System Logo",
+          title: "Voting System",
+          description: "Political Voting Website (.NET)",
+          id: "4",
+          pageUrl: `${pageLink}voting-system`,
+          date: "2021",
+        },
+      ],
+    },
+    {
+      category: "video games",
+      cards: [
+        {
+          imgUrl: `${imgLink}baldorf.png`,
+          alt: "baldorf graphic",
+          title: "baldorf",
+          description: "Unity Game Developer",
+          id: "1",
+          pageUrl: `${pageLink}baldorf`,
+          date: "2022",
+        },
+        {
+          imgUrl: `${imgLink}godot_demo.png`,
+          alt: "godot demo graphic",
+          title: "Godot Demo",
+          description: "Godot Game Developer",
+          id: "2",
+          pageUrl: `${pageLink}godot-game-level-demo`,
+          date: "2022",
+        },
+        {
+          imgUrl: `${imgLink}minieval.png`,
+          alt: "Minieval Logo",
+          title: "Minieval",
+          description: "Godot Game Developer",
+          id: "3",
+          pageUrl: `${pageLink}minieval`,
+          date: "2021",
+        },
+      ],
+    },
+    {
+      category: "mobile apps",
+      cards: [
+        {
+          imgUrl: `${imgLink}lifting_calculator.png`,
+          alt: "Weight Lifting Calculator Screenshot",
+          title: "Weight Lifting Calculator",
+          description: "Xamarin Mobile Developer",
+          id: "1",
+          pageUrl: `${pageLink}weight-lifting-calculator`,
+          date: "2020",
+        },
+      ],
+    },
+    {
+      category: "documents",
+      cards: [
+        {
+          imgUrl: `${imgLink}resume.png`,
+          alt: "Resume graphic",
+          title: "Resume",
+          description: "General Purpose",
+          id: "1",
+          pageUrl: `https://v1.kalenwallin.com/Documents/Resume.pdf`,
+          date: "2023",
+        },
+        {
+          imgUrl: `${imgLink}ThesisCover.jpg`,
+          alt: "Honors Thesis Cover Graphic",
+          title: "Honors Thesis",
+          description: "University of Nebraska-Lincoln (UNL)",
+          id: "2",
+          pageUrl: `${pageLink}undergrad-honors-thesis`,
+          date: "2023",
+        },
+        {
+          imgUrl: `${imgLink}unl_transcript.png`,
+          alt: "University of Nebraska-Lincoln transcript graphic",
+          title: "BA Computer Science",
+          description: "University of Nebraska-Lincoln (UNL)",
+          id: "3",
+          pageUrl: `https://v1.kalenwallin.com/Documents/unl_transcript.pdf`,
+          date: "2023",
+        },
+        {
+          imgUrl: `${imgLink}ru_transcript.png`,
+          alt: "Reykjavík University graphic",
+          title: "Exchange Studies",
+          description: "Reykjavík University (RU)",
+          id: "4",
+          pageUrl: `https://v1.kalenwallin.com/Documents/ru_transcript.pdf`,
+          date: "2022",
+        },
+        {
+          imgUrl: `${imgLink}cchs_transcript.png`,
+          alt: "CCHS Transcript graphic",
+          title: "High School",
+          description: "Chase County High School (CCHS)",
+          id: "5",
+          pageUrl: `https://v1.kalenwallin.com/Documents/cchstranscript.pdf`,
+          date: "2019",
+        },
+      ],
+    },
+  ];
 
-    function toTitleCase(str) {
-        return str.replace(/\w\S*/g, function (txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
-    }
-
-    return pages.map((page) => {
-        let cards = page.cards;
-
-        return {
-            params: {
-                category: page.category,
-            },
-            props: { cards, categorycap: toTitleCase(page.category) },
-        };
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
+  }
+
+  return pages.map((page) => {
+    let cards = page.cards;
+
+    return {
+      params: {
+        category: page.category,
+      },
+      props: { cards, categorycap: toTitleCase(page.category) },
+    };
+  });
 }
 
 const { category } = Astro.params;
@@ -239,26 +259,23 @@ export const prerender = true;
 ---
 
 <style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  @media (min-width: 1440px) {
     .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
-        gap: 1rem;
-        padding: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
     }
-    @media (min-width: 1440px) {
-        .grid {
-            grid-template-columns: repeat(
-                auto-fill,
-                minmax(min(250px, 100%), 1fr)
-            );
-        }
-    }
+  }
 </style>
 <Base title={categorycap}>
-    <div class="modal-header">
-        <h1 style="text-transform:capitalize;">{category}</h1>
-    </div>
-    <div class="grid">
-        {cards.map((card: any) => <Card article={card} />)}
-    </div>
+  <div class="modal-header">
+    <h1 style="text-transform:capitalize;">{category}</h1>
+  </div>
+  <div class="grid">
+    {cards.map((card: any) => <Card article={card} />)}
+  </div>
 </Base>
